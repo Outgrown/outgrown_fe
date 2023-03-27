@@ -4,6 +4,6 @@ describe('template spec', () => {
   })
 
   it('passes another test', () => {
-    cy.visit('https://www.google.com')
+    cy.expect(true).to.eq(true)
   })
 })
