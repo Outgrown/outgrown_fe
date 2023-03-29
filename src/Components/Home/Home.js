@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Panel from "./Panel";
 import "./Home.css"
+import {register} from 'swiper/element/bundle'
+register()
 // import Nav from "../Nav/Nav"
 
 export default function Home() {
@@ -13,8 +16,8 @@ export default function Home() {
         <p>(Image goes here)</p>
       </div>
       <div className="cat-container">
-        <h3 name="cat-label">Style for every stage</h3>
-        <div aria-labelledby="cat-label" className="cat-box">
+        <h3 className="home-label">Style for every stage</h3>
+        <div className="cat-box">
           <Link className="cat-link" to="/marketplace/baby">
             <img className="cat-img" src="https://images.theconversation.com/files/301782/original/file-20191114-26273-4r0nva.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop" alt="Crying baby" />
             Baby (0 - 2)
@@ -32,6 +35,23 @@ export default function Home() {
             Big Kid (8+)
           </Link>
         </div>
+      </div>
+      <div className="article-container">
+        <h3 className="home-label">Browse by article type</h3>
+        <swiper-container
+          slides-per-view="2"
+          grid-columns="2"
+          grab-cursor="true"
+          navigation="true"
+          loop="true"
+        >
+          <Panel path="" label="Tops/Tees" /> 
+          <Panel path="" label="Pants" />
+          <Panel path="" label="Activewear" />  
+          <Panel path="" label="Formal" />  
+          <Panel path="" label="Onesies" />   
+          <Panel path="" label="Other" />  
+        </swiper-container>
       </div>
     </>
   )
