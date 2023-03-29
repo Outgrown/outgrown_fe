@@ -15,7 +15,12 @@ const Nav = () => {
                     <p>BOY</p>
                 </div>
                 <div className='dropdown'>
-                    <button>Users</button>
+                    <button className='dropbutton'>Users</button>
+                    <div className='dropdown-options'>
+                        <a href=''>user1</a>
+                        <a href=''>user2</a>
+                        <a href=''>user3</a>
+                    </div>
                 </div>
             </div>
         </section>
