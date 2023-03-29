@@ -1,0 +1,25 @@
+/* Mobile Sizes */
+@media screen and (max-width: 1000px) {
+
+    .nav-container {
+        display: block;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .nav-bar {
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0% 2% 0%;
+    }
+
+    .nav-grid {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    
+  }
