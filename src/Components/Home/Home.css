@@ -1,0 +1,47 @@
+.cta {
+  height: 20rem;
+  background-color: lightblue;
+}
+
+.cat-container {
+  padding: 0 3%
+}
+
+.cat-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.cat-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.cat-img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .cat-box {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cat-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cat-box {
+    width: 75%;
+    grid-template-columns: 1fr;
+  }
+}
