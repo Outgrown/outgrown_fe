@@ -1,0 +1,43 @@
+.form-field{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selects-form {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 3rem;
+  align-items: center;
+  width: 100vw;
+}
+.search-area {
+  margin-top: 1.5rem;
+  width: 75%;
+  height: 2rem;
+  display: flex;
+  justify-content: center; 
+}
+.search-area > button{
+  margin-left:1rem; 
+}
+
+@media(max-width: 600px) { 
+  .selects-form {
+  flex-direction: column;
+  margin-top:1.5rem;
+  margin-bottom: .5rem;
+  height:100%;
+  
+  justify-content: space-evenly;
+  }
+  .form-field {
+    height:14rem;
+    justify-content: space-evenly;
+  }
+
+
+}
