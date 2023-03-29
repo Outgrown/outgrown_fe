@@ -54,6 +54,8 @@ swiper-slide, .art-link {
   width: 75%;
   background-color:bisque;
   margin: 0 auto;
+  text-decoration: none;
+  color: black;
 }
 
 @media screen and (max-width: 1000px) {
