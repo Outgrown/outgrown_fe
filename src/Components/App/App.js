@@ -1,13 +1,13 @@
 import logo from '../../Images/logo.svg'
 import './App.css';
 import Form from '../Form/Form';
-import Card from '../Card/Card';
+import Details from '../Details/Details';
 
 function App() {
   return (
     <div className="App">
       <Form/>
-      <Card/>
+      <Details/>
     </div>
   );
 }

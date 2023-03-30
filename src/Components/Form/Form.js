@@ -21,7 +21,7 @@ return(<section className="form-field">
      <div className="clothing-article-sel"> 
        <label> Article Types </label>
          <select onChange={(e) => handleSelectedOptions(setArticle,e)}> 
-           <option value={'Top/Tees'}> Tops/Tees </option>
+           <option value={'tops'}> Tops/Tees </option>
            <option value={'pants'}> Pants </option>
            <option value={'activeWear'}> Active Wear </option>
          </select>
