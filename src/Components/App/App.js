@@ -11,14 +11,13 @@ const App = () => {
   return (
     <div className="App">
       <Nav />
-      {loading && <Loading />}
-      {!loading && <Switch>
+      <Switch>
         <Route exact path="/"><Home/></Route>
         <Route exact path="/marketplace/:filters" />
         <Route exact path="/profile/:id" />
         <Route exact path="/details/:id" />
         <Route element={<p>Error!</p>} /> 
-      </Switch>}
+      </Switch>
     </div>
   )
 }
