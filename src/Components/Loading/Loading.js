@@ -6,8 +6,8 @@ import './Loading.css'
 const Loading = () => {
   return (
     <div className="loading-container">
-      <img className='spinner' src={spinner} alt='Circle of Pokemon spinning in a circle'/>
-      <img className='title' src={logo} alt='Pokependium title image'/>
+      <img className='spinner' src={spinner} alt='circle of kids clothing spinning in a circle'/>
+      <img className='title' src={logo} alt='OutGrown title image'/>
     </div>
   )
 }
