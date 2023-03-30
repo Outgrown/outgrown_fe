@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav'
 import Form from '../Form/Form';
 import Details from '../Details/Details';
 import Loading from '../Loading/Loading';
+import Marketplace from '../Marketplace/Marketplace';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -12,8 +13,8 @@ const App = () => {
     <div className="App">
       <Nav />
       <Switch>
-        <Route exact path="/"><Home/></Route>
-        <Route exact path="/marketplace/:filters" />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/marketplace/" component={Marketplace} />
         <Route exact path="/profile/:id" />
         <Route exact path="/details/:id" />
         <Route element={<p>Error!</p>} /> 
