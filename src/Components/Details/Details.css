@@ -1,0 +1,6 @@
+.clothing-details {
+  border: 1px solid black;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}

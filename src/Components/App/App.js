@@ -1,14 +1,16 @@
 import React from 'react'
 import './App.css'
 import Nav from '../Nav/Nav'
-import Home from '../Home/Home'
+import Form from '../Form/Form';
+import Details from '../Details/Details';
 
 const App = () => {
 
   return (
-    <div className='App'>
+    <div className="App">
       <Nav />
-      <Home />
+      <Form/>
+      <Details/>
     </div>
   )
 
