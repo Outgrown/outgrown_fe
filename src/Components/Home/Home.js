@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Panel from "./Panel";
 import "./Home.css"
@@ -7,6 +7,22 @@ register()
 // import Nav from "../Nav/Nav"
 
 export default function Home() {
+  useEffect(() => {
+    const swiperEl = document.querySelector('swiper-container');
+    const swiperParams = {
+      breakpoints: {
+        1000: {
+          slidesPerView: 2,
+        },
+        700: {
+          slidesPerView: 1,
+        }
+      }
+    };
+    Object.assign(swiperEl, swiperParams);
+    swiperEl.initialize();
+  }, [])
+  
   return (
     <>
       <h1 className="header">Outgrown</h1>
@@ -39,8 +55,7 @@ export default function Home() {
       <div className="article-container">
         <h3 className="home-label">Browse by article type</h3>
         <swiper-container
-          slides-per-view="2"
-          grid-columns="2"
+          init="false"
           grab-cursor="true"
           navigation="true"
           loop="true"
