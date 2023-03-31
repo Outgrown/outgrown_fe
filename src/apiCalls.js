@@ -46,23 +46,27 @@ query findUser($id: ID!) {
 }
 `;
 
-// query allArticles {
-//   allArticles {
-//     name
-//     status
-//     image_link
-//     alt_image
-//     articleType
-//     age_group
-//     color
-//     gender
-//     condition
-//     description
-//     price
-//     created_at
-//     updated_at
-//     user {
-//         id
-//         name
-//     }
-// }
+export const GET_ARTICLE = gql`
+query findArticle($id: ID!, $name: String!) {
+    findArticle(id: $id, name: $name) {
+        id
+        name
+        status
+        imageLink
+        altImage
+        articleType
+        ageGroup
+        color
+        gender
+        condition
+        description
+        price
+        user {
+            id
+            name
+            __typename
+        }
+        __typename
+    }
+}
+`;

@@ -19,7 +19,7 @@ const App = () => {
       <Nav />
       <Form />
       <Details />
-      <Loading />
+      {/* <Loading /> */}
     </div>
   )
 }

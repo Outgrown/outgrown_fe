@@ -1,14 +1,43 @@
-import React from "react"
+import React,{useState, useEffect}from "react"
+import { useQuery, gql } from '@apollo/client';
+import { GET_ARTICLE } from "../../apiCalls";
 import './Details.css'
 
+
 const Details = () => {
+
+
+  const {loading, error, data} = useQuery(GET_ARTICLE,{
+      variables:{
+        "id": "2",
+        "name": "Clownfish"
+      }
+  })
+
+
+  console.log(foundItem.findArticle)
+  
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
   return(<section className="clothing-details">
   <section>
-    <h2> image area </h2>
+    {/* <img src={foundArticle.imageLink} alt={foundArticle.altImage}/> */}
   </section>
   <section>
-    <h2> Clothing Name: </h2>
-    <h2> Price: </h2>
+    <h2> </h2>
+    <h2> Price:</h2>
     <h3> Owner:</h3>
     <div> 
       <h3>Age Group </h3>
