@@ -5,7 +5,7 @@ import './Details.css'
 
 
 const Details = () => {
-
+const [desiredItem, setDesiredItem] = useState(null)
 
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
@@ -13,9 +13,13 @@ const Details = () => {
         "name": "Clownfish"
       }
   })
+// setDesiredItem(data)// infinite loop error 
+console.log('Hit Point 1',data)
+// console.log('Will This work', data.findArticle) // after reRender error
 
 
-  console.log(foundItem.findArticle)
+
+
   
 
 
