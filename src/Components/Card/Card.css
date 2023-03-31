@@ -1,11 +1,12 @@
 .link {
   text-decoration: none;
+  color: black;
   width: 22%;
 }
 
 .text p {
   margin: 0;
-  padding: 0;
+  padding: 0 2%;
   text-align: left;
 }
 
@@ -26,8 +27,7 @@ img {
 .text {
   width: 100%;
   background-color: rgb(245, 245, 245);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  padding: 5px 0;
 }
 
 .name {
