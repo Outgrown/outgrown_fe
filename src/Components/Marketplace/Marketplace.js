@@ -4,17 +4,24 @@ import Loading from "../Loading/Loading";
 import Card from "../Card/Card"
 import "./Marketplace.css"
 import { Redirect } from "react-router-dom";
-import { useQuery } from '@apollo/client';
-import { GET_ALL_ARTICLES } from '../../apiCalls';
+import { useQuery, useLazyQuery } from '@apollo/client';
+import { GET_ALL_ARTICLES, FIND_ARTICLES } from '../../apiCalls';
 
 export default function Marketplace() {
   const [allArticles, setAllArticles] = useState([])
   const [articleType, setArticleType] = useState('')
   const [ageGroup, setAgeGroup] = useState('')
   const [gender, setGender] = useState('')
-
-  const {loading, error, data} = useQuery(GET_ALL_ARTICLES)
   
+  // const {loading, error, data} = useQuery(GET_ALL_ARTICLES)
+  
+  const [filterQuery, {loading, error, data}] = useLazyQuery(FIND_ARTICLES, {
+    variables: {
+      "articleType": "bottoms",
+      "ageGroup": "baby"
+    }
+  })
+
   useEffect(() => {
     setAllArticles(data?.allArticles)
   }, [loading])
