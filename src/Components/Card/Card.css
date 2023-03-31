@@ -1,11 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
 .link {
   text-decoration: none;
+  color: black;
+  width: 22%;
+}
+
+.text p {
+  margin: 0;
+  padding: 0 2%;
+  text-align: left;
 }
 
 .card {
@@ -25,8 +27,7 @@ img {
 .text {
   width: 100%;
   background-color: rgb(245, 245, 245);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  padding: 5px 0;
 }
 
 .name {
@@ -59,4 +60,10 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; 
+}
+
+@media screen and (max-width: 1000px) {
+  .link {
+    width: 40%;
+  }
 }
