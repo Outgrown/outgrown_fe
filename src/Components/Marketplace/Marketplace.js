@@ -7,7 +7,7 @@ import { Redirect } from "react-router-dom";
 import { useQuery, useLazyQuery } from "@apollo/client";
 import { GET_ALL_ARTICLES, FIND_ARTICLES } from "../../apiCalls";
 
-export default function Marketplace() {
+export default function Marketplace({navParam}) {
   const [allArticles, setAllArticles] = useState([]);
   const [articleType, setArticleType] = useState("");
   const [ageGroup, setAgeGroup] = useState("");
@@ -56,6 +56,7 @@ export default function Marketplace() {
   return (
     <>
       <Form
+        navParam={navParam}
         setArticleType={setArticleType}
         setAgeGroup={setAgeGroup}
         setGender={setGender}
