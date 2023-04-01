@@ -46,8 +46,8 @@ export default function Home() {
             Toddler (2 - 4)
           </Link>
           <Link className="cat-link" to="/marketplace/little_kid">
-            <img className="cat-img" src={littleKidImg} alt="A small kid wearing a striped longsleeve shirt" />
-            Small Kid (5 - 7)
+            <img className="cat-img" src={littleKidImg} alt="A little kid wearing a striped longsleeve shirt" />
+            Little Kid (5 - 7)
           </Link>
           <Link className="cat-link" to="/marketplace/big_kid">
             <img className="cat-img" src={bigKidImg} alt="A big kid wearing a red plaid shirt and a yellow hat" />
