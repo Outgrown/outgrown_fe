@@ -22,8 +22,21 @@ export default function Marketplace() {
     }
   })
 
+  console.log(data)
+  console.log(allArticles)
+
   useEffect(() => {
-    setAllArticles(data?.allArticles)
+    const variables = {
+      articleType: articleType ? articleType : null,
+      ageGroup: ageGroup ? ageGroup : null,
+      gender: gender ? gender : null,
+    }
+    filterQuery({variables: variables})
+
+  }, [articleType, ageGroup, gender])
+
+  useEffect(() => {
+    setAllArticles(data?.findArticles)
   }, [loading])
 
   let info
