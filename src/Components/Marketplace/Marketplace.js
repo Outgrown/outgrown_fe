@@ -13,12 +13,7 @@ export default function Marketplace() {
   const [ageGroup, setAgeGroup] = useState('')
   const [gender, setGender] = useState('')
   
-  // const {loading, error, data} = useQuery(GET_ALL_ARTICLES)
-  
   const [filterQuery, {loading, error, data}] = useLazyQuery(FIND_ARTICLES)
-
-  console.log(data)
-  console.log(allArticles)
 
   useEffect(() => {
     const variables = {
@@ -26,18 +21,25 @@ export default function Marketplace() {
       ageGroup: ageGroup ? ageGroup : null,
       gender: gender ? gender : null,
     }
+    console.log(variables)
     filterQuery({variables: variables})
 
   }, [articleType, ageGroup, gender])
 
   useEffect(() => {
-    setAllArticles(data?.findArticles)
-  }, [loading])
+    if(data) {
+      setAllArticles(data.findArticles) 
+    }
+  }, [data])
+
+  useEffect(() => {
+    console.log(allArticles)
+  }, [allArticles])
 
   let info
   if(error) {
     info = <Redirect to="/error" />
-  } else if (!loading && allArticles) {
+  } else if (!loading) {
     // console.log(new Set(allArticles.map(art => art.articleType)))
     info = allArticles.map(art => 
       <Card 
