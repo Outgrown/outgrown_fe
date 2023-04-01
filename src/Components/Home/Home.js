@@ -4,7 +4,6 @@ import Panel from "./Panel";
 import "./Home.css"
 import {register} from 'swiper/element/bundle'
 register()
-// import Nav from "../Nav/Nav"
 
 export default function Home() {
   useEffect(() => {

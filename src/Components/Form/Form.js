@@ -47,14 +47,14 @@ return(<section className="form-field">
          <button type="Submit"> Submit </button>
       </div>
    </form>
-    <div className="search-area">
+    {/* <div className="search-area">
       <input
         placeholder="Search by Title"
         name='searchedItem'
         onChange={(e) => handleSelectedOptions(setSearchedItem,e)}
       /> 
       <button> Search </button>
-    </div>
+    </div> */}
 
 </section>
 
