@@ -15,9 +15,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Home />
+      {/* <Home /> */}
       <Nav />
-      <Form />
+      {/* <Form /> */}
       <Details />
       {/* <Loading /> */}
     </div>

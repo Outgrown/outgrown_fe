@@ -1,6 +1,109 @@
 .clothing-details {
-  border: 1px solid black;
-  height: auto;
+ border:2px solid black;
+}
+
+.detail-card-display {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px;
+  justify-content: center;
+  align-items: center;
+}
+.vital-info{
+  border:1px solid black;
+  background-color: lightgray;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+article{
+  border:3px solid black; 
+  border-radius: 8px;
+  margin-top:3rem;
+  margin-bottom: 1rem;
+}
+ article:hover {
+   transform: scale(1.2);
+ }
+
+.details-cont{
+  display: flex;
+  flex-direction: column;
+  height:auto;
+  justify-content: center;
+}
+.trait-wrap{
+  border: 1.5px solid black;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: .5rem;
+  margin-left: 1rem;
+  margin-right: 2rem; 
+  box-shadow: 2px 2px .03px rgba(0, 0, 0, 0.19);
+}
+.desc-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.desc-area > p {
+  font-size: large;
+  font-weight: 400;
+}
+.details-btn{
+  padding:1rem;
+  width: 50%;
+  border-radius: 14px;
+  margin-bottom:.5rem;
+  font-weight: 600;
+  font-size: large;
+}
+.details-btn:hover{
+  background-color: rgb(22, 105, 133);
+  color:white; 
+  cursor: grab;
+}
+
+@media(min-width: 1000px){
+  .detail-card-display {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .vital-info {
+    border: 1px solid black;
+    background-color: lightgray;
+    margin-top: 1rem;
+    margin-right:1rem;
+    border-radius: 13px;
+    height:10rem;
+  }
+  .trait-wrap {
+    border: 1.5px solid black;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: .5rem;
+    margin-right: 1rem;
+    margin-left: 4rem;
+    box-shadow: 1px 2px .03px rgba(0, 0, 0, 0.098);
+    width: 85%;
+  }
+  
+  article {
+    border: 3px solid black;
+    border-radius: 8px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    }
+  
+  article:hover {
+   transform: scale(1.15);
+  }
 }
