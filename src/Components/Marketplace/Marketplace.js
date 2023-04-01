@@ -15,12 +15,7 @@ export default function Marketplace() {
   
   // const {loading, error, data} = useQuery(GET_ALL_ARTICLES)
   
-  const [filterQuery, {loading, error, data}] = useLazyQuery(FIND_ARTICLES, {
-    variables: {
-      "articleType": "bottoms",
-      "ageGroup": "baby"
-    }
-  })
+  const [filterQuery, {loading, error, data}] = useLazyQuery(FIND_ARTICLES)
 
   console.log(data)
   console.log(allArticles)
