@@ -29,7 +29,7 @@ const Details = () => {
     
     {!loading && !error && <section className="detail-card-display">
       <article className="image-area">
-        <img src={'https://b3h2.scene7.com/is/image/BedBathandBeyond/mktplace-s-7457227c-d85c-4898-b1d3-bf9e8ffdaac9'} alt={data.findArticle.altImage}/>
+        <img src={data.findArticle.imageLink} alt={data.findArticle.altImage}/>
       </article>
       <section className="details-cont">
         <div className="vital-info"> 
