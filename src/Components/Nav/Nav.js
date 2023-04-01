@@ -1,20 +1,21 @@
 import React from 'react'
 import './Nav.css'
 import { NavLink } from 'react-router-dom'
-
+import Form from '../Form/Form'
+import Marketplace from '../Marketplace/Marketplace'
 
 const Nav = () => {
 
     // const elements = [
-    //     <p key="marketplace">MARKETPLACE</p>,
-    //     <p key="baby">Baby (0 - 2)</p>,
-    //     <p key="toddler">Toddler (2 - 4)</p>,
-    //     <p key="little_kid">Little Kid (5 - 7)</p>,
-    //     <p key="big_kid">Big Kid (8+)</p>
+    //     <p key="1" value="marketplace">MARKETPLACE</p>,
+    //     <p key="2" value="baby">Baby (0 - 2)</p>,
+    //     <p key="3" value="toddler">Toddler (2 - 4)</p>,
+    //     <p key="4" value="little_kid">Little Kid (5 - 7)</p>,
+    //     <p key ="5" value="big_kid">Big Kid (8+)</p>
     // ]
 
-    // const wrapElements = elements.map((element) => {
-    //     <NavLink to={`/marketplace/${element}`} className='marketplace-button'>
+    // const wrapElements = elements.map((element, index) => {
+    //     <NavLink key={index} to={`/marketplace/${element}`} className='marketplace-button'>
     //         {element}
     //     </NavLink>
     // })
@@ -25,19 +26,19 @@ const Nav = () => {
             <div className='nav-bar'>
                 <div className='nav-grid'>
                     <NavLink to='/marketplace' className='marketplace-button'>
-                        <p>MARKETPLACE</p>
+                        <p value="marketplace">MARKETPLACE</p>
                     </NavLink>
                     <NavLink to='/marketplace/baby' className='baby-nav-button'>
-                        <p>Baby (0 - 2)</p>
+                        <p value="baby">Baby (0 - 2)</p>
                     </NavLink>
-                    <NavLink to='/marketplace/toddler' className='toddler-nav-button'>
-                        <p>Toddler (2 - 4)</p>
+                    <NavLink to='/marketplace/todler' className='toddler-nav-button'>
+                        <p value="toddler">Toddler (2 - 4)</p>
                     </NavLink>
                     <NavLink to='/marketplace/little_kid' className='Little-kid-nav-button'>
-                        <p>Little Kid (5 - 7)</p>
+                        <p value="little_kid">Little Kid (5 - 7)</p>
                     </NavLink>
                     <NavLink to='/marketplace/big_kid' className='big-kid-nav-button'>
-                        <p>Big Kid (8+)</p>
+                        <p value="big_kid">Big Kid (8+)</p>
                     </NavLink>
                 </div>
                 <div className='dropdown'>
