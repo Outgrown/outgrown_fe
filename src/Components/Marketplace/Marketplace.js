@@ -64,10 +64,11 @@ export default function Marketplace({navParam}) {
       {/* <div className="loading-div">
         <Loading />
       </div> */}
+      {error && <p>{error?.message}</p>}
       {loading &&  <div className="loading-div">
           <Loading />
         </div>}
-      {!loading && !info.length && <p>Sorry, no items found for those filters</p>}
+      {!loading && !info.length && !error?.message && <p>Sorry, no items found for those filters</p>}
       {!loading && info.length > 0 && <div className="market-container">{info}</div>}
 
     </>
