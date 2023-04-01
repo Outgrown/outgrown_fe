@@ -46,8 +46,8 @@ query findUser($id: ID!) {
 }
 `
 export const FIND_ARTICLES = gql`
-  query findArticles($articleType: String!, $ageGroup: String!) {
-    findArticles(articleType: $articleType, ageGroup: $ageGroup) {
+  query findArticles($articleType: String, $ageGroup: String, $gender: String) {
+    findArticles(articleType: $articleType, ageGroup: $ageGroup, gender: $gender) {
         id
         name
         status
