@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://2453ced7-a985-4472-8b7d-20ed31e41526.mock.pstmn.io",
+  uri: "https://outgrown-be.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });
 
