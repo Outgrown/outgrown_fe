@@ -70,4 +70,27 @@ export const FIND_ARTICLES = gql`
     }
 }
 `;
-
+export const GET_ARTICLE = gql  `
+query findArticle($id: ID!, $name: String!) {
+    findArticle(id: $id, name: $name) {
+        id
+        name
+        status
+        imageLink
+        altImage
+        articleType
+        ageGroup
+        color
+        gender
+        condition
+        description
+        price
+        user {
+            id
+            name
+            __typename
+        }
+        __typename
+    }
+  }
+`
