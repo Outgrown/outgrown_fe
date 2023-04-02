@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import React from "react";
 import { useState, useEffect } from "react";
 import './Form.css'
@@ -36,9 +35,10 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
         <label> Article Types </label>
           <select onChange={(e) => handleSelectedOptions(setArticle,e)}> 
             <option value={''}> All </option>
-            <option value={'tops'}> Tops/Tees </option>
+            <option value={'tops'}> Tops </option>
             <option value={'bottoms'}> Bottoms </option>
-            <option value={'dresses'}> Dresses </option>
+            <option value={'formal'}> Formal</option>
+            <option value={'onesies'}>Onesie</option>
             <option value={'other'}> Other </option>
           </select>
         </div>
@@ -60,9 +60,6 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
             <option value={'female'}> Girl </option>
             <option value={'unisex'}> Unisex</option>    
           </select>
-        </div>
-        <div className="submit-area">
-          <button type="Submit"> Submit </button>
         </div>
     </form>
       {/* <div className="search-area">
