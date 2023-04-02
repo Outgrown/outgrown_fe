@@ -4,7 +4,6 @@ import Panel from "./Panel";
 import "./Home.css"
 import {register} from 'swiper/element/bundle'
 register()
-// import Nav from "../Nav/Nav"
 
 export default function Home() {
   useEffect(() => {
@@ -25,8 +24,6 @@ export default function Home() {
   
   return (
     <>
-      <h1 className="header">Outgrown</h1>
-      <div>Nav Goes Here</div>
       <div className="cta">
         <h2>Shop stuff and see some clothes</h2>
         <p>(Image goes here)</p>
