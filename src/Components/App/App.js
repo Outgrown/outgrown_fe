@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from '../Home/Home';
 import Nav from '../Nav/Nav'
+import Profile from '../Profile/Profile';
 import Form from '../Form/Form';
 import Details from '../Details/Details';
 import Loading from '../Loading/Loading';
@@ -18,7 +19,9 @@ const App = () => {
         <Route exact path="/marketplace/:filter" render={({match}) => (
           <Marketplace navParam={match.params.filter} />
         )} />
-        <Route exact path="/profile/:id" />
+        <Route exact path="/profile/:id" render={({match}) => (
+          <Profile userParam={match.params.id}/>
+        )} />
         <Route exact path="/details/:id" />
         <Route element={<p>Error!</p>} /> 
       </Switch>

@@ -44,9 +44,9 @@ const Nav = () => {
                 <div className='dropdown'>
                     <button className='dropbutton'>Users</button>
                     <div className='dropdown-options'>
-                        <a href='/profile/user1'>user1</a>
-                        <a href='/profile/user2'>user2</a>
-                        <a href='/profile/user3'>user3</a>
+                        <a href='/profile/1'>user1</a>
+                        <a href='/profile/2'>user2</a>
+                        <a href='/profile/3'>user3</a>
                     </div>
                 </div>
             </div>
