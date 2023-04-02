@@ -48,7 +48,7 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
           <option value={''}> All </option>
           <option value={'baby'}> Baby(0-2yr) </option>
           <option value={'todler'}> Toddler(2-4yr)</option>
-          <option value={'little'}> Little Kid (5-7yr)</option>
+          <option value={'little_kid'}> Little Kid (5-7yr)</option>
           <option value={'big_kid'}> Big Kid (8+)</option>
         </select>
         </div>
