@@ -26,7 +26,7 @@ const Nav = () => {
       <Link to="/" className="logo-link"><img className="logo" src={logo}/></Link>
       <div className='nav-bar'>
         <div className='nav-grid'>
-          <NavLink to='/marketplace/all/all/all' className='nav-button' isActive={() => pathname.includes('all/all/all')}>MARKETPLACE</NavLink>
+          <NavLink to='/marketplace/all/all/all' className='nav-button' isActive={() => pathname.split('/')[3] === 'all'}>MARKETPLACE</NavLink>
           <NavLink to='/marketplace/all/baby/all' className='nav-button' isActive={() => pathname.includes('baby')}>BABY</NavLink>
           <NavLink to='/marketplace/all/todler/all' className='nav-button' isActive={() => pathname.includes('todler')}>TODDLER</NavLink>
           <NavLink to='/marketplace/all/little_kid/all' className='nav-button' isActive={() => pathname.includes('little_kid')}>LITTLE KID</NavLink>
