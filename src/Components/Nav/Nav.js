@@ -1,30 +1,47 @@
 import React from 'react'
 import './Nav.css'
-
+import { Link, NavLink } from 'react-router-dom'
+import logo from '../../assets/OutGrownLogo.png'
+import Form from '../Form/Form'
+import Marketplace from '../Marketplace/Marketplace'
 
 const Nav = () => {
+  // const elements = [
+  //     <p key="1" value="marketplace">MARKETPLACE</p>,
+  //     <p key="2" value="baby">Baby (0 - 2)</p>,
+  //     <p key="3" value="toddler">Toddler (2 - 4)</p>,
+  //     <p key="4" value="little_kid">Little Kid (5 - 7)</p>,
+  //     <p key ="5" value="big_kid">Big Kid (8+)</p>
+  // ]
 
-    return (
-        <section className='nav-container'>
-            <h1>Outgrown</h1>
-            <div className='nav-bar'>
-                <div className='nav-grid'>
-                    <p>MARKETPLACE</p>
-                    <p>BABY</p>
-                    <p>GIRL</p>
-                    <p>BOY</p>
-                </div>
-                <div className='dropdown'>
-                    <button className='dropbutton'>Users</button>
-                    <div className='dropdown-options'>
-                        <a href=''>user1</a>
-                        <a href=''>user2</a>
-                        <a href=''>user3</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  // const wrapElements = elements.map((element, index) => {
+  //     <NavLink key={index} to={`/marketplace/${element}`} className='marketplace-button'>
+  //         {element}
+  //     </NavLink>
+  // })
+
+  return (
+    <section className='nav-container'>
+      <Link to="/" className="logo-link"><img className="logo" src={logo}/></Link>
+      <div className='nav-bar'>
+        <div className='nav-grid'>
+          <NavLink exact to='/marketplace' className='nav-button' activeClassName="selected">MARKETPLACE</NavLink>
+          <NavLink to='/marketplace/baby' className='nav-button' activeClassName="selected">BABY</NavLink>
+          <NavLink to='/marketplace/todler' className='nav-button' activeClassName="selected">TODDLER</NavLink>
+          <NavLink to='/marketplace/little_kid' className='nav-button' activeClassName="selected">LITTLE KID</NavLink>
+          <NavLink to='/marketplace/big_kid' className='nav-button' activeClassName="selected">BIG KID</NavLink>
+        </div>
+        <div className='dropdown'>
+          <button className='dropbutton'>CHANGE USER</button>
+          <div className='dropdown-options'>
+            <a href='/profile/user1'>User 1</a>
+            <a href='/profile/user2'>User 2</a>
+            <a href='/profile/user3'>User 3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Nav;

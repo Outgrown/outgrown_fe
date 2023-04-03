@@ -1,6 +1,100 @@
 .clothing-details {
-  border: 1px solid black;
-  height: auto;
+ display: flex;
+ flex-direction: column;
+}
+
+.vital-info {
+  background-color: rgba(231, 229, 229, 0.91);
+  margin-left: 7rem;
+  width:70%;
+  border-radius: 10px;
+  margin-top: 1rem;
+  width:75%;
+}
+article{
+  margin-top:6rem;
+  margin-bottom: 3rem;
+}
+article > img {
+  height:auto; 
+}
+ article > img:hover {
+   transform: scale(1.3);
+ }
+
+.details-cont{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  height:auto;
+}
+ .info-wrap {
+  display: flex;
+  flex-direction: column;
+ }
+.trait-wrap{
+  display: flex;
+  justify-content: space-around;
+  margin-top: .5rem;
+  margin-left: 2rem;
+  margin-right: 2rem; 
+  box-shadow: 0px 2px .03px rgba(0, 0, 0, 0.19);
+}
+.desc-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right:5%;
+  margin-left:5%;
+}
+.desc-area > p {
+  font-size: large;
+  font-weight: 400;
+}
+.details-btn {
+  padding:1rem;
+  width: 50%;
+  border-radius: 14px;
+  margin-bottom:.5rem;
+  font-weight: 600;
+  font-size: large;
+}
+.details-btn:hover{
+  background-color: rgb(126, 201, 233);
+  color:white; 
+  cursor: grab;
+}
+
+@media(min-width: 1000px){
+  .detail-card-display {
+      display: flex;
+      flex-direction: row;
+    }
+  article {
+    margin-top: 6rem;
+    margin-left:2rem;  
+  }
+  article> img {
+    height: auto;
+  }
+
+  .vital-info {
+    background-color: lightgray;
+    margin-top: 1rem;
+    margin-right:7rem;
+    margin-left:8rem;
+    border-radius: 13px;
+    height:12rem;
+  }
+  .trait-wrap {
+    margin-top: 1rem;
+    margin-right: 8rem;
+    margin-left: 7rem;
+    box-shadow: 0px 2px .03px rgba(0, 0, 0, 0.098);
+    width: 75%;
+  }
+  
+  article > img :hover {
+   transform: scale(1.15);
+  }
 }

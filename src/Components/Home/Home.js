@@ -2,6 +2,10 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Panel from "./Panel";
 import "./Home.css"
+import babyImg from "../../assets/baby.jpeg"
+import toddlerImg from '../../assets/toddler.webp'
+import littleKidImg from "../../assets/little_kid.avif"
+import bigKidImg from "../../assets/big_kid.webp"
 import {register} from 'swiper/element/bundle'
 register()
 
@@ -24,32 +28,34 @@ export default function Home() {
   
   return (
     <>
-      <div className="cta">
-        <h2>Shop stuff and see some clothes</h2>
-        <p>(Image goes here)</p>
+      <div className="cta-box">
+        <div className="cta">
+          <h2>Gently used clothes for all ages and sizes</h2>
+          <Link to="/marketplace">{"Shop all clothes >"}</Link>
+        </div>
       </div>
       <div className="cat-container">
         <h3 className="home-label">Style for every stage</h3>
         <div className="cat-box">
           <Link className="cat-link" to="/marketplace/baby">
-            <img className="cat-img" src="https://images.theconversation.com/files/301782/original/file-20191114-26273-4r0nva.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop" alt="Crying baby" />
+            <img className="cat-img" src={babyImg} alt="A baby wearing a green sweater and overalls" />
             Baby (0 - 2)
           </Link>
-          <Link className="cat-link" to="/marketplace/toddler">
-            <img className="cat-img" src="https://s.wsj.net/public/resources/images/BN-NU761_yhealt_8S_20160502103050.jpg" alt="Crying toddler" />
+          <Link className="cat-link" to="/marketplace/todler">
+            <img className="cat-img" src={toddlerImg} alt="A toddler wearing jeans and a white t-shirt" />
             Toddler (2 - 4)
           </Link>
-          <Link className="cat-link" to="/marketplace/smallkid">
-            <img className="cat-img" src="https://media.istockphoto.com/id/153664652/photo/children-kid-screaming-expression-on-white.jpg?s=612x612&w=0&k=20&c=-HMOjkQF8RbwsvJuAln_gFpcfnCUKFcolhj3uo-KquY=" alt="Screaming small kid" />
-            Small Kid (5 - 7)
+          <Link className="cat-link" to="/marketplace/little_kid">
+            <img className="cat-img" src={littleKidImg} alt="A little kid wearing a striped longsleeve shirt" />
+            Little Kid (5 - 7)
           </Link>
-          <Link className="cat-link" to="/marketplace/bigkid">
-            <img className="cat-img" src="https://media.istockphoto.com/id/471200718/photo/unhappy-boy-crying.jpg?s=612x612&w=0&k=20&c=5YkxNLOwWMLs1J2FTQKneaca4Yi6mm9qUr3sTbc-GG4=" alt="Angry big kid" />
+          <Link className="cat-link" to="/marketplace/big_kid">
+            <img className="cat-img" src={bigKidImg} alt="A big kid wearing a red plaid shirt and a yellow hat" />
             Big Kid (8+)
           </Link>
         </div>
       </div>
-      <div className="article-container">
+      <div className="art-container">
         <h3 className="home-label">Browse by article type</h3>
         <swiper-container
           init="false"
