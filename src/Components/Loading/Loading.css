@@ -9,11 +9,11 @@
 .spinner{
   position: absolute;
   animation: spin 10s linear infinite;
-  width: 100%;
+  width: 70%;
 }
 
 .title{
-  width: 100%;
+  width: 70%;
 }
 
 @keyframes spin {
