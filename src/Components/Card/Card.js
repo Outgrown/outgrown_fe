@@ -4,7 +4,7 @@ import './Card.css'
 
 const Card = ({id, name, imageLink, altImage, ageGroup, price}) => {
   return( 
-  <Link to={`/details/${id}`} className='link'>
+  <Link to={`/details/${id}/${name}`} className='link'>
     <div className="card">
       <img src={imageLink} alt={altImage}/>
       <div className="text">
