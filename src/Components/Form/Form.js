@@ -21,7 +21,7 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
   }, [kidGender])
 
   useEffect(() => {
-    setAgeGroup(navParam)
+    setKidAge(navParam)
   },[navParam])
 
   const handleSelectedOptions = (action,e) => {

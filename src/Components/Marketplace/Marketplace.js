@@ -41,7 +41,7 @@ export default function Marketplace({navParam}) {
     info = <Redirect to="/error" />;
   } else if (!loading) {
     // console.log(new Set(allArticles.map(art => art.articleType)))
-    info = allArticles.map((art) => (
+    info = allArticles.filter(art => art.status === 'available').map((art) => (
       <Card
         key={art.id}
         id={art.id}

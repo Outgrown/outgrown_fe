@@ -15,7 +15,7 @@ const App = () => {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/marketplace/" component={Marketplace} />
+        <Route exact path="/marketplace/" render={() => <Marketplace navParam={''}/>} />
         <Route exact path="/marketplace/:filter" render={({match}) => (
           <Marketplace navParam={match.params.filter} />
         )} />
