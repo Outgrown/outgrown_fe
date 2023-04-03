@@ -39,6 +39,7 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
             <option value={'bottoms'}> Bottoms </option>
             <option value={'formal'}> Formal</option>
             <option value={'onesies'}>Onesie</option>
+            <option value={'activewear'}> Active Wear</option>
             <option value={'other'}> Other </option>
           </select>
         </div>
