@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Loading from "../Loading/Loading";
 import Card from "../Card/Card";
+import Error from "../Error/Error";
 import "./Marketplace.css";
 import { Redirect } from "react-router-dom";
-import { useQuery, useLazyQuery } from "@apollo/client";
-import { GET_ALL_ARTICLES, FIND_ARTICLES } from "../../apiCalls";
+import { useLazyQuery } from "@apollo/client";
+import { FIND_ARTICLES } from "../../apiCalls";
 
 export default function Marketplace({navParam}) {
   const [allArticles, setAllArticles] = useState([]);
@@ -64,10 +65,11 @@ export default function Marketplace({navParam}) {
       {/* <div className="loading-div">
         <Loading />
       </div> */}
+      {error && <Error message={error?.message} />}
       {loading &&  <div className="loading-div">
           <Loading />
         </div>}
-      {!loading && !info.length && <p>Sorry, no items found for those filters</p>}
+      {!loading && !info.length && !error?.message && <Error message={'No options found for filters. Try a different combination!'}/>}
       {!loading && info.length > 0 && <div className="market-container">{info}</div>}
 
     </>
