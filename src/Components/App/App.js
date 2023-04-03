@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav'
 import Form from '../Form/Form';
 import Details from '../Details/Details';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 import Marketplace from '../Marketplace/Marketplace';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
