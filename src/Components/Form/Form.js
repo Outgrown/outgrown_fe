@@ -34,13 +34,12 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
       <div className="clothing-article-sel"> 
         <label> Article Types </label>
           <select onChange={(e) => handleSelectedOptions(setArticle,e)}> 
-            <option className="form-opts" value={''}> All </option>
-            <option className="form-opts" value={'tops'}> Tops </option>
-            <option className="form-opts" value={'bottoms'}> Bottoms </option>
-            <option className="form-opts" value={'formal'}> Formal</option>
-            <option className="form-opts" value={'onesies'}>Onesie</option>
-            <option className="form-opts" value={'activewear'}> Active Wear</option>
-            <option className="form-opts" value={'other'}> Other </option>
+            <option value={''}> All </option>
+            <option value={'tops'}> Tops/Tees </option>
+            <option value={'pants'}> Bottoms </option>
+            <option value={'formal'}> Formal </option>
+            <option value={'onesies'}> Onesies </option>
+            <option value={'other'}> Other </option>
           </select>
         </div>
       <div className="age-group-sel">
@@ -56,10 +55,10 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
         <div className="gender-sel">
         <label> Gender </label>
           <select onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
-            <option className="form-opts"value={''}> All </option>
-            <option className="form-opts" value={'male'}> Boy </option>
-            <option className="form-opts"value={'female'}> Girl </option>
-            <option className="form-opts"value={'unisex'}> Unisex</option>    
+            <option value={''}> All </option>
+            <option value={'boy'}> Boy </option>
+            <option value={'girl'}> Girl </option>
+            <option value={'unisex'}> Unisex</option>    
           </select>
         </div>
     </form>
