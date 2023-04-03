@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import './Form.css'
-const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
-
-  const [clothingArticle , setArticle] = useState('')
-  const [kidAge, setKidAge]= useState(navParam || '')
-  const [kidGender , setKidGender] = useState('')
-  // const [searchedItem, setSearchedItem] = useState('')
+const Form = ({paramArt, paramAge, paramGender, setArticleType, setAgeGroup, setGender}) => {
+  const history = useHistory()
+  const [clothingArticle, setArticle] = useState(paramArt || '')
+  const [kidAge, setKidAge]= useState(paramAge || '')
+  const [kidGender, setKidGender] = useState(paramGender || '')
   
   useEffect(() => {
     setArticleType(clothingArticle)
@@ -21,19 +21,37 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
   }, [kidGender])
 
   useEffect(() => {
-    setKidAge(navParam)
-  },[navParam])
+    setArticle(paramArt)
+  }, [paramArt])
+
+  useEffect(() => {
+    setKidAge(paramAge)
+  },[paramAge])
+
+  useEffect(() => {
+    setKidGender(paramGender)
+  }, [paramGender])
+
+  useEffect(() => {
+    updateUrl()
+  }, [clothingArticle, kidAge, kidGender])
 
   const handleSelectedOptions = (action,e) => {
     action(e.target.value) 
   }
-  
+
+  const updateUrl = () => {
+    const article = clothingArticle ? clothingArticle : 'all'
+    const age = kidAge ? kidAge : 'all'
+    const gender = kidGender ? kidGender : 'all'
+    history.push(`/marketplace/${article}/${age}/${gender}`)
+  }
 
   return(<section className="form-field">
       <form className="selects-form">
       <div className="clothing-article-sel"> 
         <label> Article Types </label>
-          <select className='form-select' onChange={(e) => handleSelectedOptions(setArticle,e)}> 
+          <select className='form-select' value={clothingArticle} onChange={(e) => handleSelectedOptions(setArticle,e)}> 
             <option value={''}> All </option>
             <option value={'tops'}> Tops/Tees </option>
             <option value={'pants'}> Bottoms </option>
@@ -54,7 +72,7 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
         </div>
         <div className="gender-sel">
         <label> Gender </label>
-          <select className='form-select' onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
+          <select className='form-select' value={kidGender} onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
             <option className="form-opts" value={''}> All </option>
             <option className="form-opts" value={'boy'}> Boy </option>
             <option className="form-opts" value={'girl'}> Girl </option>
