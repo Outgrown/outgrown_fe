@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(209, 228, 245);
+  background-color: rgba(213, 227, 240, 0.808);
   border-radius: 13px;
   padding:1.2%;
   width: 90%;
@@ -23,13 +23,16 @@
 }
 .form-select{
   padding: 2%;
-  font-size:20px;
-  margin-top: 1rem;
+  font-size:18px;
+  margin-top: .5rem;
   border-radius: 8px;
   font-family: 'Vollkorn', serif;
 }
 label{
-  font-size: large;
+  font-size: Medium;
+}
+.form-opts{
+  font-family: 'VollKorn,serif';
 }
 .form-select:hover{
   cursor: grab;
@@ -37,16 +40,7 @@ label{
 label:hover{
   color:white; 
 }
-.search-area {
-  margin-top: 1.5rem;
-  width: 75%;
-  height: 2rem;
-  display: flex;
-  justify-content: center; 
-}
-.search-area > button{
-  margin-left:1rem; 
-}
+
 
 @media(max-width: 1000px) { 
   .form-field {
@@ -54,7 +48,7 @@ label:hover{
       margin-bottom: 2rem;
       margin-left: 2rem;
       margin-right: 2rem;
-      height:14rem;
+      height:16rem;
       justify-content: space-evenly;
       font-family: 'Vollkorn', serif;
     }
@@ -67,12 +61,12 @@ label:hover{
   justify-content: space-evenly;
   }
   
-    .form-select {
-      padding: 2%;
-      font-size: 20px;
-      margin-top: 1rem;
-      font-family: 'Vollkorn', serif;
-    }
+  .form-select {
+    padding: 2%;
+    font-size: 18px;
+    margin-top: .5rem;
+    font-family: 'Vollkorn', serif;
+  }
 
 
 }
