@@ -4,7 +4,7 @@ import './Error.css'
 const Error = (message) => {
   return (
     <div className="error-container">
-      <img src=""/>
+      <img src="https://www.matchclothing.co.uk/user/baby-big-clothes-6.jpg"/>
       <p>{message}</p>
     </div>
   )
