@@ -20,7 +20,7 @@ const App = () => {
           <Marketplace navParam={match.params.filter} />
         )} />
         <Route exact path="/profile/:id" render={({match}) => (
-          <Profile userParam={match.params.id}/>
+          <Profile id={match.params.id}/>
         )} />
         <Route exact path="/details/:id" />
         <Route element={<p>Error!</p>} /> 
