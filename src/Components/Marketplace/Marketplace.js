@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Loading from "../Loading/Loading";
 import Card from "../Card/Card";
+import Error from "../Error/Error";
 import "./Marketplace.css";
 import { Redirect } from "react-router-dom";
-import { useQuery, useLazyQuery } from "@apollo/client";
-import { GET_ALL_ARTICLES, FIND_ARTICLES } from "../../apiCalls";
+import { useLazyQuery } from "@apollo/client";
+import { FIND_ARTICLES } from "../../apiCalls";
 
 export default function Marketplace({navParam}) {
   const [allArticles, setAllArticles] = useState([]);
@@ -64,7 +65,7 @@ export default function Marketplace({navParam}) {
       {/* <div className="loading-div">
         <Loading />
       </div> */}
-      {error && <p>{error?.message}</p>}
+      {error && <Error message={error?.message} />}
       {loading &&  <div className="loading-div">
           <Loading />
         </div>}
