@@ -21,7 +21,7 @@ const App = () => {
         )} />
         <Route exact path="/profile/:id" />
         <Route exact path="/details" component={Details} />
-        <Route element={<p>Error!</p>} /> 
+        <Route element={<Error message={'404: Page Not Found'}/>>} /> 
       </Switch>
     </div>
   )
