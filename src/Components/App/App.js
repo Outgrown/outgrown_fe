@@ -22,7 +22,7 @@ const App = () => {
         <Route exact path="/profile/:id" render={({match}) => (
           <Profile id={match.params.id}/>
         )} />
-        <Route exact path="/details/:id" />
+        <Route exact path="/details" component={Details} />
         <Route element={<p>Error!</p>} /> 
       </Switch>
     </div>

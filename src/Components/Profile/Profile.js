@@ -41,7 +41,6 @@ const Profile = (param) => {
         info = <Redirect to="/error" />;
     } else if (!loading) {
         info = userListings.map((listing) => 
-        <div className="listings-container">
             <Card
             key={listing.id}
             id={listing.id}
@@ -51,9 +50,7 @@ const Profile = (param) => {
             altImage={listing.altImage}
             price={listing.price}
             status={listing.status}
-          />{listing.status}
-        </div>
-
+          />
         )
     }
 
