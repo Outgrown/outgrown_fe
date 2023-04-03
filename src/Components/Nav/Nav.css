@@ -40,7 +40,7 @@
   color: #000;
 }
 
-.selected, .selected:visited {
+.nav-button.active {
   color: black;
 }
 

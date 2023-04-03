@@ -52,16 +52,16 @@
   width: 23%;
   color: black;
   font-size: 1.1rem;
-  transition: transform 0.25s;
-}
-
-.cat-link:hover {
-  text-decoration: underline;
-  transform: scale(1.1)
 }
 
 .cat-img {
+  transition: transform 0.25s;
   width: 100%;
+  margin-bottom: 10px;
+}
+
+.cat-img:hover {
+  transform: scale(1.1)
 }
 
 .art-container {

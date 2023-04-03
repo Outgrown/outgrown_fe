@@ -63,12 +63,12 @@ export default function Home() {
           navigation="true"
           loop="true"
         >
-          <Panel path="" label="Tops/Tees" /> 
-          <Panel path="" label="Pants" />
-          <Panel path="" label="Activewear" />  
-          <Panel path="" label="Formal" />  
-          <Panel path="" label="Onesies" />   
-          <Panel path="" label="Other" />  
+          <Panel path="tops/all/all" label="Tops/Tees" /> 
+          <Panel path="pants/all/all" label="Bottoms" />
+          <Panel path="activewear/all/all" label="Activewear" />  
+          <Panel path="formal/all/all" label="Formal" />  
+          <Panel path="onesies/all/all" label="Onesies" />   
+          <Panel path="other/all/all" label="Other" />  
         </swiper-container>
       </div>
     </>
