@@ -3,41 +3,69 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(213, 227, 240, 0.808);
+  border-radius: 13px;
+  padding:1.2%;
+  width: 90%;
+  margin-top: 2rem;
+  margin-bottom:3rem;
+  margin-left: 3rem; 
+  font-family: 'Vollkorn', serif;
 }
 
 .selects-form {
-
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 3rem;
+  height: 6rem;
   align-items: center;
   width: 100vw;
 }
-.search-area {
-  margin-top: 1.5rem;
-  width: 75%;
-  height: 2rem;
-  display: flex;
-  justify-content: center; 
+.form-select{
+  padding: 2%;
+  font-size:18px;
+  margin-top: .5rem;
+  border-radius: 8px;
+  font-family: 'Vollkorn', serif;
 }
-.search-area > button{
-  margin-left:1rem; 
+label{
+  font-size: Medium;
+}
+.form-opts{
+  font-family: 'VollKorn,serif';
+}
+.form-select:hover{
+  cursor: grab;
+}
+label:hover{
+  color:white; 
 }
 
+
 @media(max-width: 1000px) { 
+  .form-field {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height:16rem;
+      justify-content: space-evenly;
+      font-family: 'Vollkorn', serif;
+    }
+
   .selects-form {
   flex-direction: column;
   margin-top:1.5rem;
   margin-bottom: .5rem;
   height:100%;
-  
   justify-content: space-evenly;
   }
   
-  .form-field {
-    height:14rem;
-    justify-content: space-evenly;
+  .form-select {
+    padding: 2%;
+    font-size: 18px;
+    margin-top: .5rem;
+    font-family: 'Vollkorn', serif;
   }
 
 
