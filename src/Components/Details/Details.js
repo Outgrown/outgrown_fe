@@ -5,13 +5,13 @@ import './Details.css'
 import Loading from "../Loading/Loading";
 
 
-const Details = () => {
+const Details = ({id , name}) => {
   const [desiredItem, setDesiredItem] = useState(null)
 
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
-        "id": "2",
-        "name": "Clownfish"
+        "id": id,
+        "name": name
       }
   })
 
@@ -35,7 +35,7 @@ const Details = () => {
         <div className="vital-info"> 
           <h2> {data.findArticle.name}</h2>
           <h3> Owner: {data.findArticle.user.name} </h3>
-          <h3> Status:{data.findArticle.status} </h3>
+          <h3> Status: {data.findArticle.status} </h3>
           <h4> Cost: ${data.findArticle.price}</h4>
         </div>
         <div className="info-wrap"> 

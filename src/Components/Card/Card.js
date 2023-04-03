@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
+
 const Card = ({ id, name, imageLink, altImage, ageGroup, price }) => {
   const displayAge = ageGroup
     .split("_")
     .map((word) => word.substring(0, 1).toUpperCase() + word.substring(1))
     .join(" ");
-
+    
   return (
     <Link to={`/details/${id}`} className="link">
       <div className="card">

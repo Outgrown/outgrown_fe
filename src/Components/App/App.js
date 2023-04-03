@@ -20,7 +20,9 @@ const App = () => {
           <Marketplace navParam={match.params.filter} />
         )} />
         <Route exact path="/profile/:id" />
-        <Route exact path="/details" component={Details} />
+        <Route exact path="/details/:id/:name" render={({match}) => {
+         return <Details id={match.params.id} name={match.params.name} />
+        }}/>
         <Route render={() => <Error message={'404: Page Not Found'}/>} /> 
       </Switch>
     </div>
