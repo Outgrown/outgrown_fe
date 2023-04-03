@@ -3,13 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(160, 203, 241);
+  background-color: rgb(209, 228, 245);
   border-radius: 13px;
   padding:1.2%;
   width: 90%;
   margin-top: 2rem;
   margin-bottom:3rem;
-  margin-left: 3rem;  
+  margin-left: 3rem; 
+  font-family: 'Vollkorn', serif;
 }
 
 .selects-form {
@@ -20,16 +21,17 @@
   align-items: center;
   width: 100vw;
 }
-select{
+.form-select{
   padding: 2%;
   font-size:20px;
   margin-top: 1rem;
   border-radius: 8px;
+  font-family: 'Vollkorn', serif;
 }
 label{
   font-size: large;
 }
-select:hover{
+.form-select:hover{
   cursor: grab;
 }
 label:hover{
@@ -52,6 +54,9 @@ label:hover{
       margin-bottom: 2rem;
       margin-left: 2rem;
       margin-right: 2rem;
+      height:14rem;
+      justify-content: space-evenly;
+      font-family: 'Vollkorn', serif;
     }
 
   .selects-form {
@@ -62,14 +67,11 @@ label:hover{
   justify-content: space-evenly;
   }
   
-  .form-field {
-    height:14rem;
-    justify-content: space-evenly;
-  }
-    select {
+    .form-select {
       padding: 2%;
       font-size: 20px;
       margin-top: 1rem;
+      font-family: 'Vollkorn', serif;
     }
 
 

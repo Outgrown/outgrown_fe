@@ -45,11 +45,11 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
         </div>
       <div className="age-group-sel">
         <label> Age Groups </label>
-        <select value={kidAge} onChange={(e) => handleSelectedOptions(setKidAge,e)}> 
+        <select className="form-select" value={kidAge} onChange={(e) => handleSelectedOptions(setKidAge,e)}> 
           <option value={''}> All </option>
           <option value={'baby'}> Baby(0-2yr) </option>
           <option value={'todler'}> Toddler(2-4yr)</option>
-          <option value={'little'}> Little Kid (5-7yr)</option>
+          <option value={'little_kid'}> Little Kid (5-7yr)</option>
           <option value={'big_kid'}> Big Kid (8+)</option>
         </select>
         </div>

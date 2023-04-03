@@ -1,10 +1,36 @@
-.cta {
+.cta-box {
   height: 20rem;
-  background-color: lightblue;
+  background-image: url(../../assets/cta.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 7%;
+}
+
+.cta {
+  width: 25%;
+}
+
+.cta h2 {
+  font-size: 30px;
+}
+
+.cta a, .cta a:visited {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+.cta a:hover {
+  text-decoration: underline;
 }
 
 .home-label {
   margin-top: 3rem;
+  font-size: 1.5rem;
 }
 
 .cat-container {
@@ -21,19 +47,24 @@
 }
 
 .cat-link {
+  display: block;
   text-decoration: none;
-  display: block;
-  width: 20%;
+  width: 23%;
   color: black;
-  display: block;
-  border: 1px solid black;
+  font-size: 1.1rem;
+  transition: transform 0.25s;
+}
+
+.cat-link:hover {
+  text-decoration: underline;
+  transform: scale(1.1)
 }
 
 .cat-img {
   width: 100%;
 }
 
-.article-container {
+.art-container {
   height: 300px;
   width: 90%;
   margin: 0 auto;
@@ -41,6 +72,7 @@
 
 swiper-container {
   height: 75%;
+  --swiper-theme-color: #000;
 }
 
 swiper-slide, .art-link {
