@@ -8,8 +8,15 @@
 }
 
 .bottom-container {
+    border: 1px solid black;
+}
+
+.listings-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px 0;
+    flex-wrap: wrap;
+    padding: 0 2.5%;
 }
 
 @media screen and (max-width: 1000px) {

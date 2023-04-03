@@ -5,11 +5,12 @@ import { GET_USER } from '../../apiCalls'
 import { useQuery } from "@apollo/client";
 import { Redirect } from "react-router-dom";
 import Card from "../Card/Card";
+import Loading from "../Loading/Loading";
 
 const Profile = (param) => {
 
-    // const [userListings, setListings] = useState('')
-    const [user, setUser] = useState([])
+    const [userListings, setListings] = useState([])
+    const [user, setUser] = useState({})
     const [userID, setUserID] = useState(param.id)
 
     // const [userQuery, { loading, error, data }] = useLazyQuery(GET_USER)
@@ -22,18 +23,38 @@ const Profile = (param) => {
     useEffect(() => {
         if(data) {
             setUser(data.findUser)
+            // setListings(user.articles)
         }
     }, [data])
 
     useEffect(() => {
-        console.log("user", user)
+        if(user.articles) {
+            console.log("user", user)
+            setListings(user.articles)
+        }
+
     },[user])
+    
+    let info;
 
-    // let info;
     if (error) {
-    //   info = <Redirect to="/error" />;
+        info = <Redirect to="/error" />;
     } else if (!loading) {
+        info = userListings.map((listing) => 
+        <div className="listings-container">
+            <Card
+            key={listing.id}
+            id={listing.id}
+            name={listing.name}
+            ageGroup={listing.ageGroup}
+            imageLink={listing.imageLink}
+            altImage={listing.altImage}
+            price={listing.price}
+            status={listing.status}
+          />{listing.status}
+        </div>
 
+        )
     }
 
     return (
@@ -44,8 +65,10 @@ const Profile = (param) => {
             </section>
             <section className="bottom-container">
                 <h4>Listings</h4>
-                
-                <></>
+                {loading &&  <div className="loading-div">
+                    <Loading />
+                </div>}
+                {!loading && <div className="listings-container">{info}</div>}
             </section>
         </section>
     )
