@@ -15,14 +15,21 @@ const App = () => {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/marketplace/" render={() => <Marketplace navParam={''}/>} />
-        <Route exact path="/marketplace/:filter" render={({match}) => (
-          <Marketplace navParam={match.params.filter} />
-        )} />
+        <Route exact path="/marketplace/" component={Marketplace} />
+        <Route exact path="/marketplace/:article/:age/:gender" render={({match}) => {
+          const article = match.params.article === 'all' ? '' : match.params.article
+          const age = match.params.age === 'all' ? '' : match.params.age
+          const gender = match.params.gender === 'all' ? '' : match.params.gender
+          return <Marketplace 
+            paramArt={article} 
+            paramAge={age} 
+            paramGender={gender}
+          />
+        }} />
         <Route exact path="/profile/:id" />
-        <Route exact path="/details/:id/:name" render={({match}) => {
-         return <Details id={match.params.id} name={match.params.name} />
-        }}/>
+        <Route exact path="/details/:id/:name" render={({match}) => (
+          <Details id={match.params.id} name={match.params.name} />
+        )}/>
         <Route render={() => <Error message={'404: Page Not Found'}/>} /> 
       </Switch>
     </div>
