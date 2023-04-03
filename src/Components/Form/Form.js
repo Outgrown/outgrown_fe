@@ -37,8 +37,9 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
           <select onChange={(e) => handleSelectedOptions(setArticle,e)}> 
             <option value={''}> All </option>
             <option value={'tops'}> Tops/Tees </option>
-            <option value={'bottoms'}> Bottoms </option>
-            <option value={'dresses'}> Dresses </option>
+            <option value={'pants'}> Bottoms </option>
+            <option value={'formal'}> Formal </option>
+            <option value={'onesies'}> Onesies </option>
             <option value={'other'}> Other </option>
           </select>
         </div>
@@ -56,8 +57,8 @@ const Form = ({navParam, setArticleType, setAgeGroup, setGender}) => {
         <label> Gender </label>
           <select onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
             <option value={''}> All </option>
-            <option value={'male'}> Boy </option>
-            <option value={'female'}> Girl </option>
+            <option value={'boy'}> Boy </option>
+            <option value={'girl'}> Girl </option>
             <option value={'unisex'}> Unisex</option>    
           </select>
         </div>
