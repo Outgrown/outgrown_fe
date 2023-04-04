@@ -71,12 +71,13 @@ const Profile = (param) => {
     return (
         <section>
             <section className="top-container">
+            <h2>My Wardrobe</h2>
                 <img src={wardrobe} alt="wardrobe-icon" className="wardrobe-icon"/>
-                <h2>My Wardrobe</h2>
+                <h2>{user.name}</h2>
             </section>
             <section className="bottom-container">
                 <label className="options-container">
-                    <select onChange={(e) => handleOption(setUserFilter, e)}>
+                    <select value={userFilter}className="filter-dropdown" onChange={(e) => handleOption(setUserFilter, e)}>
                         <option value={''}> All </option>
                         <option className="available-button " value={'available'}>Available</option>
                         <option className="unavailable-button " value={'unavailable'}>Unavailable</option>
