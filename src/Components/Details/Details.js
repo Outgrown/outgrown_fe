@@ -1,14 +1,15 @@
 import React,{useState, useEffect}from "react"
 import { useQuery, gql, useMutation } from '@apollo/client';
-import { GET_ARTICLE,POST_USER } from "../../apiCalls";
+import { GET_ARTICLE, POST_USER } from "../../apiCalls";
 import './Details.css'
 import Loading from "../Loading/Loading";
 
 
-const Details = ({id , name, userNum}) => {
-  const [desiredItem, setDesiredItem] = useState(null)
+const Details = ({id , name, loggedUser}) => {
+  // const [desiredItem, setDesiredItem] = useState(null)
 
-  const[updateUser, { userData, userLoading, UserError }] = useMutation(POST_USER);
+  const [updateUser, outCome] = useMutation(POST_USER);
+  console.log('TESTTTME',outCome.data);
 
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
@@ -18,10 +19,10 @@ const Details = ({id , name, userNum}) => {
   })
 
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    setDesiredItem(data)
-  },[loading,error])
+  //   setDesiredItem(data)
+  // },[loading,error])
 
 
 
@@ -67,7 +68,7 @@ const Details = ({id , name, userNum}) => {
           <p> {data.findArticle.description} </p>
         </div>
         <div>
-          <button onClick={()=> updateUser({ variables: { id: data.findArticle.id, userId:{userNum}}})} className="details-btn"> Add To Profile </button>
+          <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>
         </div>
         </section>
     </section> }
