@@ -6,14 +6,15 @@ import { useQuery } from "@apollo/client";
 import { Redirect } from "react-router-dom";
 import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
+import { handleError } from "@apollo/client/link/http/parseAndCheckHttpResponse";
 
 const Profile = (param) => {
 
     const [userListings, setListings] = useState([])
     const [user, setUser] = useState({})
     const [userID, setUserID] = useState(param.id)
+    const [userFilter, setUserFilter] = useState('')
 
-    // const [userQuery, { loading, error, data }] = useLazyQuery(GET_USER)
     const {loading, error, data} = useQuery(GET_USER, {
         variables: {
             "id": userID
@@ -23,7 +24,6 @@ const Profile = (param) => {
     useEffect(() => {
         if(data) {
             setUser(data.findUser)
-            // setListings(user.articles)
         }
     }, [data])
 
@@ -34,6 +34,14 @@ const Profile = (param) => {
         }
 
     },[user])
+
+    useEffect(() => {
+        if(user.articles) {
+            let arr = user.articles
+            let filteredArray = arr.filter((listing) => listing.status === userFilter)
+            setListings(filteredArray)
+        }
+    },[userFilter])
     
     let info;
 
@@ -54,14 +62,25 @@ const Profile = (param) => {
         )
     }
 
+    const handleOption = (action, e) => {
+        action(e.target.value)
+    }
+
     return (
         <section>
             <section className="top-container">
                 <img src={wardrobe} alt="wardrobe-icon" className="wardrobe-icon"/>
-                <h2>My Closet</h2>
+                <h2>My Wardrobe</h2>
             </section>
             <section className="bottom-container">
-                <h4>Listings</h4>
+                <label className="options-container"> Status:
+                    <select onChange={(e) => handleOption(setUserFilter, e)}>
+                        <option value={''}> All </option>
+                        <option className="available-button status-button" value={'available'}>Available</option>
+                        <option className="unavailable-button status-button" value={'unavailable'}>Unavailable</option>
+                        <option className="pending-button status-button" value={"pending"}>Pending</option>
+                    </select>
+                </label>
                 {loading &&  <div className="loading-div">
                     <Loading />
                 </div>}

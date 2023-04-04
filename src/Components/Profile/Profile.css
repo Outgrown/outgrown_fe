@@ -1,10 +1,30 @@
 .top-container {
     padding-top: 5%;
-
+    
 }
 
 .wardrobe-icon {
     width: 10%;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2% 25% 2%;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.status-button {
+    border: none;
+    background: transparent;
+    color: rgb(165, 165, 165);
+}
+
+.status-button:hover {
+    color: #000;
+    display: block;
+
 }
 
 .bottom-container {
