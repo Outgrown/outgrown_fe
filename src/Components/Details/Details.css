@@ -17,6 +17,7 @@
 article{
   margin-top:6rem;
   margin-bottom: 3rem;
+  min-width:35% 
 }
 article > img {
   width:70%; 

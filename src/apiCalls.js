@@ -94,3 +94,21 @@ query findArticle($id: ID!, $name: String!) {
     }
   }
 `
+
+export const POST_USER = gql `
+mutation updateArticle ($article: UpdateArticleInput!) {
+    updateArticle(input: $article) {
+        article {
+            id
+            name
+            user {
+                id
+                name
+                __typename
+            }
+            __typename
+        }
+        errors
+    }
+}
+`
