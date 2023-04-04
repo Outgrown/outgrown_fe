@@ -22,9 +22,9 @@ const Nav = () => {
         <div className='dropdown'>
           <button className='dropbutton'>CHANGE USER</button>
           <div className='dropdown-options'>
-            <a href='/profile/user4'>User 1</a>
-            <a href='/profile/user5'>User 2</a>
-            <a href='/profile/user6'>User 3</a>
+            <a href='/profile/4'>User 1</a>
+            <a href='/profile/5'>User 2</a>
+            <a href='/profile/6'>User 3</a>
           </div>
         </div>
       </div>

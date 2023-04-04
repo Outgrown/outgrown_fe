@@ -36,11 +36,13 @@ const Profile = (param) => {
     },[user])
 
     useEffect(() => {
-        if(user.articles) {
+        if(userFilter !== '') {
             let arr = user.articles
             let filteredArray = arr.filter((listing) => listing.status === userFilter)
             setListings(filteredArray)
-        }
+          } else if (user.articles) {
+            setListings(user.articles)
+          }
     },[userFilter])
     
     let info;
