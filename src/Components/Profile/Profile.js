@@ -73,12 +73,12 @@ const Profile = (param) => {
                 <h2>My Wardrobe</h2>
             </section>
             <section className="bottom-container">
-                <label className="options-container"> Status:
+                <label className="options-container">
                     <select onChange={(e) => handleOption(setUserFilter, e)}>
                         <option value={''}> All </option>
-                        <option className="available-button status-button" value={'available'}>Available</option>
-                        <option className="unavailable-button status-button" value={'unavailable'}>Unavailable</option>
-                        <option className="pending-button status-button" value={"pending"}>Pending</option>
+                        <option className="available-button " value={'available'}>Available</option>
+                        <option className="unavailable-button " value={'unavailable'}>Unavailable</option>
+                        <option className="pending-button " value={"pending"}>Pending</option>
                     </select>
                 </label>
                 {loading &&  <div className="loading-div">
