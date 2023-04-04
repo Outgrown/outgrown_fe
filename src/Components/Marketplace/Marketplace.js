@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Loading from "../Loading/Loading";
 import Card from "../Card/Card";
+import Error from "../Error/Error";
 import "./Marketplace.css";
 import { Redirect } from "react-router-dom";
-import { useQuery, useLazyQuery } from "@apollo/client";
-import { GET_ALL_ARTICLES, FIND_ARTICLES } from "../../apiCalls";
+import { useLazyQuery } from "@apollo/client";
+import { FIND_ARTICLES } from "../../apiCalls";
 
-export default function Marketplace({navParam}) {
+export default function Marketplace({paramArt, paramAge, paramGender}) {
+
   const [allArticles, setAllArticles] = useState([]);
   const [articleType, setArticleType] = useState("");
   const [ageGroup, setAgeGroup] = useState("");
@@ -40,7 +42,7 @@ export default function Marketplace({navParam}) {
     info = <Redirect to="/error" />;
   } else if (!loading) {
     // console.log(new Set(allArticles.map(art => art.articleType)))
-    info = allArticles.map((art) => (
+    info = allArticles.filter(art => art.status === 'available').map((art) => (
       <Card
         key={art.id}
         id={art.id}
@@ -56,7 +58,9 @@ export default function Marketplace({navParam}) {
   return (
     <>
       <Form
-        navParam={navParam}
+        paramArt={paramArt}
+        paramAge={paramAge}
+        paramGender={paramGender}
         setArticleType={setArticleType}
         setAgeGroup={setAgeGroup}
         setGender={setGender}
@@ -64,10 +68,11 @@ export default function Marketplace({navParam}) {
       {/* <div className="loading-div">
         <Loading />
       </div> */}
+      {error && <Error message={error?.message} />}
       {loading &&  <div className="loading-div">
           <Loading />
         </div>}
-      {!loading && !info.length && <p>Sorry, no items found for those filters</p>}
+      {!loading && !info.length && !error?.message && <Error message={'No options found for filters. Try a different combination!'}/>}
       {!loading && info.length > 0 && <div className="market-container">{info}</div>}
 
     </>

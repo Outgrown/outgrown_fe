@@ -1,44 +1,35 @@
 import React from 'react'
 import './Nav.css'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/OutGrownLogo.png'
 import Form from '../Form/Form'
 import Marketplace from '../Marketplace/Marketplace'
 
 const Nav = () => {
+  const { pathname } = useLocation()
 
-    return (
-        <section className='nav-container'>
-            <h1>Outgrown</h1>
-            <div className='nav-bar'>
-                <div className='nav-grid'>
-                    <NavLink to='/marketplace' className='marketplace-button'>
-                        <p value="marketplace">MARKETPLACE</p>
-                    </NavLink>
-                    <NavLink to='/marketplace/baby' className='baby-nav-button'>
-                        <p value="baby">Baby (0 - 2)</p>
-                    </NavLink>
-                    <NavLink to='/marketplace/todler' className='toddler-nav-button'>
-                        <p value="toddler">Toddler (2 - 4)</p>
-                    </NavLink>
-                    <NavLink to='/marketplace/little_kid' className='Little-kid-nav-button'>
-                        <p value="little_kid">Little Kid (5 - 7)</p>
-                    </NavLink>
-                    <NavLink to='/marketplace/big_kid' className='big-kid-nav-button'>
-                        <p value="big_kid">Big Kid (8+)</p>
-                    </NavLink>
-                </div>
-                <div className='dropdown'>
-                    <button className='dropbutton'>Users</button>
-                    <div className='dropdown-options'>
-                        <a href='/profile/4'>user1</a>
-                        <a href='/profile/5'>user2</a>
-                        <a href='/profile/6'>user3</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className='nav-container'>
+      <Link to="/" className="logo-link"><img className="logo" src={logo}/></Link>
+      <div className='nav-bar'>
+        <div className='nav-grid'>
+          <NavLink to='/marketplace/all/all/all' className='nav-button' isActive={() => pathname.split('/')[3] === 'all'}>MARKETPLACE</NavLink>
+          <NavLink to='/marketplace/all/baby/all' className='nav-button' isActive={() => pathname.includes('baby')}>BABY</NavLink>
+          <NavLink to='/marketplace/all/todler/all' className='nav-button' isActive={() => pathname.includes('todler')}>TODDLER</NavLink>
+          <NavLink to='/marketplace/all/little_kid/all' className='nav-button' isActive={() => pathname.includes('little_kid')}>LITTLE KID</NavLink>
+          <NavLink to='/marketplace/all/big_kid/all' className='nav-button' isActive={() => pathname.includes('big_kid')}>BIG KID</NavLink>
+        </div>
+        <div className='dropdown'>
+          <button className='dropbutton'>CHANGE USER</button>
+          <div className='dropdown-options'>
+            <a href='/profile/user1'>User 1</a>
+            <a href='/profile/user2'>User 2</a>
+            <a href='/profile/user3'>User 3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Nav;
