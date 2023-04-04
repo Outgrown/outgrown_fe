@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from '../Home/Home';
 import Nav from '../Nav/Nav'
+import Profile from '../Profile/Profile';
 import Form from '../Form/Form';
 import Details from '../Details/Details';
 import Loading from '../Loading/Loading';
@@ -28,7 +29,9 @@ const App = () => {
             paramGender={gender}
           />
         }} />
-        <Route exact path="/profile/:id" />
+        <Route exact path="/profile/:id" render={({match}) => (
+          <Profile id={match.params.id}/>
+        )} />
         <Route exact path="/details/:id/:name" render={({match}) => (
           <Details id={match.params.id} name={match.params.name} loggedUser={loggedUser} />
         )}/>

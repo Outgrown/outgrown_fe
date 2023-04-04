@@ -7,19 +7,6 @@ import Marketplace from '../Marketplace/Marketplace'
 
 const Nav = () => {
   const { pathname } = useLocation()
-  // const elements = [
-  //     <p key="1" value="marketplace">MARKETPLACE</p>,
-  //     <p key="2" value="baby">Baby (0 - 2)</p>,
-  //     <p key="3" value="toddler">Toddler (2 - 4)</p>,
-  //     <p key="4" value="little_kid">Little Kid (5 - 7)</p>,
-  //     <p key ="5" value="big_kid">Big Kid (8+)</p>
-  // ]
-
-  // const wrapElements = elements.map((element, index) => {
-  //     <NavLink key={index} to={`/marketplace/${element}`} className='marketplace-button'>
-  //         {element}
-  //     </NavLink>
-  // })
 
   return (
     <section className='nav-container'>
@@ -35,9 +22,9 @@ const Nav = () => {
         <div className='dropdown'>
           <button className='dropbutton'>CHANGE USER</button>
           <div className='dropdown-options'>
-            <a href='/profile/user1'>User 1</a>
-            <a href='/profile/user2'>User 2</a>
-            <a href='/profile/user3'>User 3</a>
+            <a href='/profile/4'>User 1</a>
+            <a href='/profile/5'>User 2</a>
+            <a href='/profile/6'>User 3</a>
           </div>
         </div>
       </div>
