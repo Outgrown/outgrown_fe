@@ -23,7 +23,6 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
       ageGroup: ageGroup ? ageGroup : null,
       gender: gender ? gender : null,
     };
-    console.log(variables);
     filterQuery({ variables: variables });
   }, [articleType, ageGroup, gender]);
 
@@ -34,14 +33,12 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
   }, [data]);
 
   useEffect(() => {
-    console.log(allArticles);
   }, [allArticles]);
 
   let info;
   if (error) {
     info = <Redirect to="/error" />;
   } else if (!loading) {
-    // console.log(new Set(allArticles.map(art => art.articleType)))
     info = allArticles.filter(art => art.status === 'available').map((art) => (
       <Card
         key={art.id}

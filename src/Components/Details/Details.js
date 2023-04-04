@@ -1,12 +1,14 @@
 import React,{useState, useEffect}from "react"
-import { useQuery, gql } from '@apollo/client';
-import { GET_ARTICLE } from "../../apiCalls";
+import { useQuery, gql, useMutation } from '@apollo/client';
+import { GET_ARTICLE,POST_USER } from "../../apiCalls";
 import './Details.css'
 import Loading from "../Loading/Loading";
 
 
-const Details = ({id , name}) => {
+const Details = ({id , name, userNum}) => {
   const [desiredItem, setDesiredItem] = useState(null)
+
+  const[updateUser, { userData, userLoading, UserError }] = useMutation(POST_USER);
 
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
@@ -65,7 +67,7 @@ const Details = ({id , name}) => {
           <p> {data.findArticle.description} </p>
         </div>
         <div>
-          <button className="details-btn"> Add To Profile </button>
+          <button onClick={()=> updateUser({ variables: { id: data.findArticle.id, userId:{userNum}}})} className="details-btn"> Add To Profile </button>
         </div>
         </section>
     </section> }
