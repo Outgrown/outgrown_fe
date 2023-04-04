@@ -7,9 +7,9 @@ import Loading from "../Loading/Loading";
 
 const Details = ({id , name, loggedUser}) => {
   // const [desiredItem, setDesiredItem] = useState(null)
-
-  const [updateUser, outCome] = useMutation(POST_USER);
+ const [updateUser, outCome] = useMutation(POST_USER);
   console.log('TESTTTME',outCome.data);
+  
 
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
@@ -17,15 +17,10 @@ const Details = ({id , name, loggedUser}) => {
         "name": name
       }
   })
+console.log('Current PERSON',data?.findArticle?.user?.id);
 
-
-  // useEffect(() => {
-    
-  //   setDesiredItem(data)
-  // },[loading,error])
-
-
-
+  console.log('INCOMING PERSON',loggedUser)
+  
   return(<section className="clothing-details">
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
@@ -67,8 +62,9 @@ const Details = ({id , name, loggedUser}) => {
           <h3> Description</h3>
           <p> {data.findArticle.description} </p>
         </div>
-        <div>
-          <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>
+       <div>
+          {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
+          {+data.findArticle.user.id === loggedUser && <button className="details-btn"> Add To Market </button>} 
         </div>
         </section>
     </section> }
