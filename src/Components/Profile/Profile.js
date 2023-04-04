@@ -73,7 +73,7 @@ const Profile = (param) => {
             <section className="top-container">
             <h2>My Wardrobe</h2>
                 <img src={wardrobe} alt="wardrobe-icon" className="wardrobe-icon"/>
-                <h2>{user.name}</h2>
+                <h2 className="username-display">{user.name}</h2>
             </section>
             <section className="bottom-container">
                 <label className="options-container">
