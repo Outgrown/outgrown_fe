@@ -6,6 +6,9 @@ import babyImg from "../../assets/baby.jpeg"
 import toddlerImg from '../../assets/toddler.webp'
 import littleKidImg from "../../assets/little_kid.avif"
 import bigKidImg from "../../assets/big_kid.webp"
+import topsImg from "../../assets/tops.png"
+import activeImg from "../../assets/activewear.jpg"
+import formalImg from "../../assets/formal.jpeg"
 import {register} from 'swiper/element/bundle'
 register()
 
@@ -67,10 +70,10 @@ export default function Home() {
           navigation="true"
           loop="true"
         >
-          <Panel path="tops/all/all" label="Tops/Tees" /> 
+          <Panel img={topsImg} path="tops/all/all" label="Tops/Tees" /> 
           <Panel path="pants/all/all" label="Bottoms" />
-          <Panel path="activewear/all/all" label="Activewear" />  
-          <Panel path="formal/all/all" label="Formal" />  
+          <Panel img={activeImg} path="activewear/all/all" label="Activewear" />  
+          <Panel img={formalImg} path="formal/all/all" label="Formal" />  
           <Panel path="onesies/all/all" label="Onesies" />   
           <Panel path="other/all/all" label="Other" />  
         </swiper-container>
