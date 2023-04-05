@@ -1,21 +1,32 @@
-import React,{useState, useEffect}from "react"
-import { useQuery, gql, useMutation } from '@apollo/client';
+import React, { useState, useEffect } from "react";
+import Modal from "../Modal/Modal";
+import { useQuery, gql, useMutation } from "@apollo/client";
 import { GET_ARTICLE, POST_USER } from "../../apiCalls";
-import './Details.css'
+import "./Details.css";
 import Loading from "../Loading/Loading";
 
+const Details = ({ id, name, loggedUser }) => {
 
-const Details = ({id , name, loggedUser}) => {
-  // const [desiredItem, setDesiredItem] = useState(null)
- const [updateUser, outCome] = useMutation(POST_USER);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   
-  const {loading, error, data} = useQuery(GET_ARTICLE,{
-      variables:{
-        "id": id,
-        "name": name
-      }
-  })
+  const { loading, error, data } = useQuery(GET_ARTICLE, {
+    variables: {
+      id: id,
+      name: name,
+    },
+  });
+  
   return(<section className="clothing-details">
+   <Modal
+        open={modalIsOpen}
+        picture={data?.findArticle?.imageLink}
+        description={data?.findArticle?.description}
+        updateModal={setModalIsOpen}
+        articleID={id}
+        loggedInUser={loggedUser}
+        sell={+data?.findArticle?.user?.id === loggedUser}
+      />
+      
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
     
@@ -57,12 +68,14 @@ const Details = ({id , name, loggedUser}) => {
           <p className="desc-d"> {data.findArticle.description} </p>
         </div>
        <div>
-          {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
-          {+data.findArticle.user.id === loggedUser &&data.findArticle.status !== 'available' && <button className="details-btn"> Add To Market </button>} 
+          {+data.findArticle.user.id !== loggedUser && <button  onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Profile </button>}
+          {+data.findArticle.user.id === loggedUser && data.findArticle.status !== 'available' && <button onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Market </button>} 
           {+data.findArticle.user.id === loggedUser && data.findArticle.status === 'available' && <button className="details-btn" disabled> Owned </button>}
         </div>
         </section>
-    </section> }
-  </section> )
-}
-export default Details; 
+        </section>
+      }
+    </section>
+  );
+};
+export default Details;

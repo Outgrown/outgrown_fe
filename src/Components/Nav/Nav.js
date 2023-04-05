@@ -35,9 +35,9 @@ const Nav = ({loggedUser}) => {
         <div className='dropdown'>
           <button className='dropbutton'>{currentUser ? currentUser : "Change User"}</button>
           <div className='dropdown-options'>
-              <a href='/profile/7'>User 1</a>
-              <a href='/profile/8'>User 2</a>
-              <a href='/profile/9'>User 3</a>
+            <a href='/profile/7'>User 1</a>
+            <a href='/profile/8'>User 2</a>
+            <a href='/profile/9'>User 3</a>
           </div>
         </div>
       </div>
