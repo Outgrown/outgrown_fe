@@ -9,9 +9,4 @@ describe('Marketplace spec', () => {
     }).as("testing");
     cy.visit('http://localhost:3000/marketplace')
   })
-
-  it('passes another test', () => {
-    cy.wait('@testing')
-    cy.expect(true).to.eq(true)
-  })
-})
+});
