@@ -6,7 +6,7 @@ import "./Details.css";
 import Loading from "../Loading/Loading";
 
 const Details = ({ id, name, loggedUser }) => {
-
+  
   const [modalIsOpen, setModalIsOpen] = useState(false);
   
   const { loading, error, data } = useQuery(GET_ARTICLE, {
@@ -16,6 +16,8 @@ const Details = ({ id, name, loggedUser }) => {
     },
   });
   
+  // console.log('TESTME',loggedUser)
+  // console.log('ARTICLE OWNER', data?.findArticle?.user?.id)
   return(<section className="clothing-details">
    <Modal
         open={modalIsOpen}
@@ -24,7 +26,8 @@ const Details = ({ id, name, loggedUser }) => {
         updateModal={setModalIsOpen}
         articleID={id}
         loggedInUser={loggedUser}
-        sell={+data?.findArticle?.user?.id === loggedUser}
+        sell={+data?.findArticle?.user?.id === +loggedUser}
+        status={data?.findArticle.status}
       />
       
     {/* {error && <Error/>} */}
@@ -68,9 +71,9 @@ const Details = ({ id, name, loggedUser }) => {
           <p className="desc-d"> {data.findArticle.description} </p>
         </div>
        <div>
-          {+data.findArticle.user.id !== loggedUser && <button  onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Profile </button>}
-          {+data.findArticle.user.id === loggedUser && data.findArticle.status !== 'available' && <button onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Market </button>} 
-          {+data.findArticle.user.id === loggedUser && data.findArticle.status === 'available' && <button className="details-btn" disabled> Owned </button>}
+          {+data.findArticle.user.id !== +loggedUser && <button  onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Profile </button>}
+          {+data.findArticle.user.id === +loggedUser && data.findArticle.status !== 'available' && <button onClick={() => setModalIsOpen(true)} className="details-btn"> Add To Market </button>} 
+          {+data.findArticle.user.id === +loggedUser && data.findArticle.status === 'available' && <button onClick={() => setModalIsOpen(true)} className="details-btn" > Remove from Marketplace </button>}
         </div>
         </section>
         </section>
