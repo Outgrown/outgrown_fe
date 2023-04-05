@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import './Modal.css'
 
-const Modal = () => {
+const Modal = ({open, picture, description, button}) => {
   const [ModalIsOpen, setModalIsOpen] = useState(false)
 
-  const closeModal = (open, picture, desctiption, button) => {
+  const closeModal = () => {
     setTimeout(() => {
       // setModalIsOpen(false)
       // Might want passed down Details state function instead of state here
     }, 400)
   }
 
-  const containerStyles = open ? "modal-container open" : "modal-container closed"
+  const containerStyles = open ? "modal-container" : "modal-container closed"
 
   return (
     <div className="modal-container" onClick={closeModal}>
@@ -19,7 +20,9 @@ const Modal = () => {
           <button>X</button>
         </div>
         <div>
-          {picture}
+          </div>
+            {picture}
+          <div>
           {description}
         </div>
         <div>
