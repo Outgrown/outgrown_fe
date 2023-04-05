@@ -6,4 +6,4 @@ describe('template spec', () => {
   it('passes another test', () => {
     cy.expect(true).to.eq(true)
   })
-})
+});
