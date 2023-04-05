@@ -68,7 +68,6 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
         </div>}
       {!loading && !info.length && !error?.message && <Error message={'No options found for filters. Try a different combination!'}/>}
       {!loading && info.length > 0 && <div className="market-container">{info}</div>}
-
     </>
   );
 }
