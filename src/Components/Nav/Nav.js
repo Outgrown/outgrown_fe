@@ -33,7 +33,7 @@ const Nav = ({loggedUser}) => {
           <NavLink to='/marketplace/all/big_kid/all' className='nav-button' isActive={() => pathname.includes('big_kid')}>BIG KID</NavLink>
         </div>
         <div className='dropdown'>
-          <button className='dropbutton'>{currentUser ? currentUser : "Change User"}</button>
+          <button className='dropbutton'>{currentUser ? currentUser : "CHANGE USER"}</button>
           <div className='dropdown-options'>
             <a href='/profile/7'>User 1</a>
             <a href='/profile/8'>User 2</a>
