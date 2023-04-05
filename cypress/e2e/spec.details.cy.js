@@ -101,7 +101,7 @@ describe('Marketplace spec', () => {
       cy.get('.desc-area').within(() => {
         cy.get('.desc-d').should('contain','A White t-shirt')
       })
-  })
+  });
   it("Should have a button that will state a user's available action" ,() => {
      cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
         if(req.body.operationName === 'findArticle') {
@@ -111,7 +111,7 @@ describe('Marketplace spec', () => {
       cy.get('[href="/details/31/Baby Boy Top"] > .card > img').click()
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
       cy.get('.details-btn').should('contain','Owned')
-  })
+  });
    
  
 })
