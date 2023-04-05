@@ -28,6 +28,7 @@ query findUser($id: ID!) {
   findUser(id: $id) {
       id
       name
+      __typename
       articles {
           id
           name
@@ -41,6 +42,7 @@ query findUser($id: ID!) {
           condition
           description
           price
+          __typename
       }
   }
 }

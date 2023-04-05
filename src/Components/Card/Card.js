@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 
 
-const Card = ({ id, name, imageLink, altImage, ageGroup, price }) => {
+const Card = ({ id, name, imageLink, altImage, ageGroup, price, status }) => {
   const displayAge = ageGroup
     .split("_")
     .map((word) => word.substring(0, 1).toUpperCase() + word.substring(1))
