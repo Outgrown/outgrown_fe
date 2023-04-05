@@ -11,12 +11,11 @@ const Profile = ({id, setCurrentUser, setUserName}) => {
 
     const [userListings, setListings] = useState([])
     const [user, setUser] = useState({})
-    const [userID, setUserID] = useState(id)
     const [userFilter, setUserFilter] = useState('')
 
     const {loading, error, data} = useQuery(GET_USER, {
         variables: {
-            "id": userID
+            "id": id
         }
     })
 
@@ -28,13 +27,11 @@ const Profile = ({id, setCurrentUser, setUserName}) => {
 
     useEffect(() => {
         if(user.articles) {
-            console.log("user", user)
             setListings(user.articles)
             setCurrentUser(user.id)
             setUserName(user)
         }
-
-    },[user])
+    },[setCurrentUser, setUserName, user])
 
     useEffect(() => {
         if(userFilter !== '') {
@@ -44,7 +41,7 @@ const Profile = ({id, setCurrentUser, setUserName}) => {
           } else if (user.articles) {
             setListings(user.articles)
           }
-    },[userFilter])
+    },[user.articles, userFilter])
     
     let info;
 

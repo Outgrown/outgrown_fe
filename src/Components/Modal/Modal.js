@@ -28,7 +28,7 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
           <button className='modal-button close-able' onClick={event => closeModalHandler(event)}>X</button>
         </div>
         <div>
-          <img className="modal-image" src={picture} />
+          <img className="modal-image" src={picture} alt={description}/>
           <div className="description">
             <p>{description}</p>
           </div>
