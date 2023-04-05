@@ -6,7 +6,6 @@ import { useQuery } from "@apollo/client";
 import { Redirect } from "react-router-dom";
 import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
-import { handleError } from "@apollo/client/link/http/parseAndCheckHttpResponse";
 
 const Profile = ({id, setCurrentUser, setUserName}) => {
 

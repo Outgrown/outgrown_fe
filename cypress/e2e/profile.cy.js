@@ -2,7 +2,7 @@ import { userJSON } from "../fixture_helper";
 import { detailJSON } from "../fixture_helper";
 
 
-describe('template spec', () => {
+describe('Profile spec', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
       if(req.body.operationName.includes('findUser')) {

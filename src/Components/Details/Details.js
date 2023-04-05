@@ -16,8 +16,6 @@ const Details = ({ id, name, loggedUser }) => {
     },
   });
   
-  // console.log('TESTME',loggedUser)
-  // console.log('ARTICLE OWNER', data?.findArticle?.user?.id)
   return(<section className="clothing-details">
    <Modal
         open={modalIsOpen}

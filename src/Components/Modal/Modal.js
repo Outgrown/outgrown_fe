@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMutation } from '@apollo/client';
 import {  POST_USER, UPDATE_ARTICLE_STATUS } from "../../apiCalls";
 import "./Modal.css";
@@ -24,7 +24,7 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
         <div className="x-button-container">
           {!sell && <h3 className='header-text' > Purchase This Item?</h3>}
           {sell && status !== 'available' &&  <h3 className='header-text' > Sell This Item?</h3>}
-          {sell && status === 'available' && <h3 className='header-text' > Remove Item From MarketPlace?</h3>}
+          {sell && status === 'available' && <h3 className='header-text' > Remove Item From Marketplace?</h3>}
           <button className='modal-button close-able' onClick={event => closeModalHandler(event)}>X</button>
         </div>
         <div>
@@ -39,10 +39,6 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
           {sell && status === 'available' && <button className="modal-button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'unavailable'}}})} >Remove From Market</button>}
           <button className='modal-button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
         </div>
-        {/* close modal button w/ hover state*/}
-        {/* modal content with picture, description ect*/}
-        {/* button to confirm purchase or putting up on marketplace */}
-        {/* button to cancel and quit out of modal */}
       </div>
     </div>
   );
