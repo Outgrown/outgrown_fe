@@ -61,7 +61,7 @@ const Details = ({id , name, loggedUser}) => {
         </div>
        <div>
           {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
-          {+data.findArticle.user.id === loggedUser && <button className="details-btn"> Add To Market </button>} 
+          {+data.findArticle.user.id === loggedUser &&data.findArticle.status !== 'available' && <button className="details-btn"> Add To Market </button>} 
           {+data.findArticle.user.id === loggedUser && data.findArticle.status === 'available' && <button className="details-btn" disabled> Owned </button>}
         </div>
         </section>
