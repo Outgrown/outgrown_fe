@@ -70,7 +70,7 @@
 
 .art-container {
   height: 300px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -85,13 +85,18 @@ swiper-slide, .art-link {
 
 .art-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 75%;
-  background-color:bisque;
   margin: 0 auto;
   text-decoration: none;
   color: black;
+}
+
+.art-link img {
+  max-height: 90%;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1000px) {

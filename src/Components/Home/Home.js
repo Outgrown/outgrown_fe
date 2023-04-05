@@ -9,6 +9,9 @@ import bigKidImg from "../../assets/big_kid.webp"
 import topsImg from "../../assets/tops.png"
 import activeImg from "../../assets/activewear.jpg"
 import formalImg from "../../assets/formal.jpeg"
+import bottomsImg from "../../assets/bottoms.jpg"
+import onesiesImg from "../../assets/onesies.jpeg"
+import otherImg from "../../assets/other.png"
 import {register} from 'swiper/element/bundle'
 register()
 
@@ -18,10 +21,10 @@ export default function Home() {
     const swiperParams = {
       breakpoints: {
         1000: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
         700: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         }
       }
     };
@@ -71,11 +74,11 @@ export default function Home() {
           loop="true"
         >
           <Panel img={topsImg} path="tops/all/all" label="Tops/Tees" /> 
-          <Panel path="pants/all/all" label="Bottoms" />
+          <Panel img={bottomsImg} path="pants/all/all" label="Bottoms" />
           <Panel img={activeImg} path="activewear/all/all" label="Activewear" />  
           <Panel img={formalImg} path="formal/all/all" label="Formal" />  
-          <Panel path="onesies/all/all" label="Onesies" />   
-          <Panel path="other/all/all" label="Other" />  
+          <Panel img={onesiesImg} path="onesies/all/all" label="Onesies" />   
+          <Panel img={otherImg} path="other/all/all" label="Other" />  
         </swiper-container>
       </div>
     </>
