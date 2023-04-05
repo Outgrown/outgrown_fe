@@ -103,7 +103,7 @@ const findArticles = [
 
 const findUsers = [
   {
-    "id": "1",
+    "id": "7",
     "name": "Fredda Hauck",
     "__typename": "User",
     "articles": [
@@ -223,7 +223,7 @@ export const detailJSON = (passedID) => {
 }
 
 export const userJSON = (idParam) => {
-  return findUsers
+  // const articles = findUsers.articles
   return {
     "data": {
       "findUser": findUsers.find(art => art.user.id === idParam)
