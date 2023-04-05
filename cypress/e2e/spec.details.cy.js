@@ -110,7 +110,7 @@ describe('Marketplace spec', () => {
       }).as("testing");
       cy.get('[href="/details/31/Baby Boy Top"] > .card > img').click()
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
-      cy.get('.details-btn').should('contain','Add To Market')
+      cy.get('.details-btn').should('contain','Owned')
   })
    
  
