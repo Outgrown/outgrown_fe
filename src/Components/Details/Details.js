@@ -73,7 +73,8 @@ const Details = ({ id, name, loggedUser }) => {
           {+data.findArticle.user.id === loggedUser && data.findArticle.status === 'available' && <button className="details-btn" disabled> Owned </button>}
         </div>
         </section>
-      )}
+        </section>
+      }
     </section>
   );
 };
