@@ -65,7 +65,7 @@ const Form = ({paramArt, paramAge, paramGender, setArticleType, setAgeGroup, set
         <select className="form-select" value={kidAge} onChange={(e) => handleSelectedOptions(setKidAge,e)}> 
           <option className="form-opts" value={''}> All </option>
           <option className="form-opts" value={'baby'}> Baby(0-2yr) </option>
-          <option className="form-opts" value={'todler'}> Toddler(2-4yr)</option>
+          <option className="form-opts" value={'toddler'}> Toddler(2-4yr)</option>
           <option className="form-opts" value={'little_kid'}> Little Kid (5-7yr)</option>
           <option className="form-opts" value={'big_kid'}> Big Kid (8+)</option>
         </select>
