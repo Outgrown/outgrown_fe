@@ -10,7 +10,7 @@ const Card = ({ id, name, imageLink, altImage, ageGroup, price, status }) => {
     .join(" ");
     
   return (
-    <Link to={`/details/${id}/${name}`} className="link">
+    <Link to={`/details/${id}/${name}`} className="link" data-cy={`${id}`}>
       <div className="card">
         <img src={imageLink} alt={altImage} />
         <div className="text">
