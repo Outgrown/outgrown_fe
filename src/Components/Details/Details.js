@@ -25,7 +25,7 @@ console.log('Current PERSON',data?.findArticle?.user?.id);
   console.log('INCOMING PERSON',loggedUser)
   
   return(<section className="clothing-details">
-        <Modal open={modalIsOpen} picture={data?.findArticle.imageLink} description={data?.findArticle.description} updateModal={setModalIsOpen}/>
+        <Modal open={modalIsOpen} picture={data?.findArticle.imageLink} description={data?.findArticle.description} updateModal={setModalIsOpen} articleID={id} loggedInUser={loggedUser}/>
 
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
