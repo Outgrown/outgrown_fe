@@ -31,7 +31,11 @@
 
 .x-button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.header-text {
+  margin-left: 10px;
 }
 
 .modal-image {
