@@ -1,6 +1,6 @@
 import React,{useState, useEffect}from "react"
 import { useQuery, gql, useMutation } from '@apollo/client';
-import { GET_ARTICLE, POST_USER } from "../../apiCalls";
+import { GET_ARTICLE, POST_USER, POST_USER } from "../../apiCalls";
 import './Details.css'
 import Loading from "../Loading/Loading";
 
@@ -9,15 +9,12 @@ const Details = ({id , name, loggedUser}) => {
   // const [desiredItem, setDesiredItem] = useState(null)
  const [updateUser, outCome] = useMutation(POST_USER);
   
-  
-
   const {loading, error, data} = useQuery(GET_ARTICLE,{
       variables:{
         "id": id,
         "name": name
       }
   })
-
   return(<section className="clothing-details">
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
