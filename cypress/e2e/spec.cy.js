@@ -14,4 +14,4 @@ describe('Marketplace spec', () => {
     cy.wait('@testing')
     cy.expect(true).to.eq(true)
   })
-})
+});
