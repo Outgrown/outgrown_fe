@@ -23,4 +23,15 @@
   background: white;
   border: 2px solid rgb(83, 83, 83);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.x-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-image {
+  width: 70%;
 }
