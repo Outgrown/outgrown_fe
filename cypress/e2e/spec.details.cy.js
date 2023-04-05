@@ -102,7 +102,7 @@ describe('Marketplace spec', () => {
         cy.get('.desc-d').should('contain','A White t-shirt')
       })
   })
-  it("Should have a button that will state add to profile or add to market place",() => {
+  it("Should have a button that will state a user's available action" ,() => {
      cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
         if(req.body.operationName === 'findArticle') {
           req.reply(detailJSON((req.body.variables.id)))
