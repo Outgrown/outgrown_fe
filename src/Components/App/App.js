@@ -11,7 +11,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
- const [loggedUser, setLoggedUser] = useState(4)
+ const [loggedUser, setLoggedUser] = useState(7)
   
  return (
     <div className="App">
