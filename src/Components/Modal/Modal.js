@@ -3,12 +3,14 @@ import React, { useState } from "react";
 const Modal = () => {
   const [ModalIsOpen, setModalIsOpen] = useState(false)
 
-  const closeModal = (picture, desctiption, button) => {
+  const closeModal = (open, picture, desctiption, button) => {
     setTimeout(() => {
       // setModalIsOpen(false)
       // Might want passed down Details state function instead of state here
     }, 400)
   }
+
+  const containerStyles = open ? "modal-container open" : "modal-container closed"
 
   return (
     <div className="modal-container" onClick={closeModal}>
