@@ -115,3 +115,21 @@ mutation updateArticleUser ($article: UpdateArticleUserInput!) {
   }
 }
 `
+
+export const UPDATE_ARTICLE_STATUS = gql `
+mutation updateArticleStatus ($article: UpdateArticleStatusInput!) {
+  updateArticleStatus(input: $article) {
+      article {
+          id
+          name
+          status
+          user {
+              id
+              name
+              __typename
+          }
+          __typename
+      }
+      errors
+  }
+}`
