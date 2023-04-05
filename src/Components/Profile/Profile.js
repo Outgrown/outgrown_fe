@@ -8,7 +8,7 @@ import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
 import { handleError } from "@apollo/client/link/http/parseAndCheckHttpResponse";
 
-const Profile = ({id, setCurrentUser}) => {
+const Profile = ({id, setCurrentUser, setUserName}) => {
 
     const [userListings, setListings] = useState([])
     const [user, setUser] = useState({})
@@ -32,6 +32,7 @@ const Profile = ({id, setCurrentUser}) => {
             console.log("user", user)
             setListings(user.articles)
             setCurrentUser(user.id)
+            setUserName(user)
         }
 
     },[user])

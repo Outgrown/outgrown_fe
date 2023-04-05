@@ -31,7 +31,7 @@ const Details = ({ id, name, loggedUser }) => {
       />
       
     {/* {error && <Error/>} */}
-    {loading && !error && <Loading/> }
+    {loading && !error && <section className="loading-details-display"><Loading/></section> }
     
     {!loading && !error && <section className="detail-card-display">
       <article className="image-area">
