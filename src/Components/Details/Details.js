@@ -1,4 +1,5 @@
 import React,{useState, useEffect}from "react"
+import Modal from "../Modal/Modal";
 import { useQuery, gql, useMutation } from '@apollo/client';
 import { GET_ARTICLE, POST_USER } from "../../apiCalls";
 import './Details.css'
@@ -22,10 +23,13 @@ console.log('Current PERSON',data?.findArticle?.user?.id);
   console.log('INCOMING PERSON',loggedUser)
   
   return(<section className="clothing-details">
+        <Modal open={true} picture={data?.findArticle.imageLink} description={data?.findArticle.description}/>
+
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
     
     {!loading && !error && <section className="detail-card-display">
+      
       <article className="image-area">
         <img src={data.findArticle.imageLink} alt={data.findArticle.altImage}/>
       </article>
@@ -63,8 +67,9 @@ console.log('Current PERSON',data?.findArticle?.user?.id);
           <p> {data.findArticle.description} </p>
         </div>
        <div>
-          {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
-          {+data.findArticle.user.id === loggedUser && <button className="details-btn"> Add To Market </button>} 
+          {/* {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
+          {+data.findArticle.user.id === loggedUser && <button className="details-btn"> Add To Market </button>}  */}
+          <button className="details-btn" onClick={() => {}}> Add To Market </button>
         </div>
         </section>
     </section> }
