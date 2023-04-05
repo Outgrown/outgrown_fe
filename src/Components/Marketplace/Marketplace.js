@@ -24,7 +24,7 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
       gender: gender ? gender : null,
     };
     filterQuery({ variables: variables });
-  }, [articleType, ageGroup, gender]);
+  }, [filterQuery, articleType, ageGroup, gender]);
 
   useEffect(() => {
     if (data) {
@@ -62,16 +62,12 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
         setAgeGroup={setAgeGroup}
         setGender={setGender}
       />
-      {/* <div className="loading-div">
-        <Loading />
-      </div> */}
       {error && <Error message={error?.message} />}
       {loading &&  <div className="loading-div">
           <Loading />
         </div>}
       {!loading && !info.length && !error?.message && <Error message={'No options found for filters. Try a different combination!'}/>}
       {!loading && info.length > 0 && <div className="market-container">{info}</div>}
-
     </>
   );
 }
