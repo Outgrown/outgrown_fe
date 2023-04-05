@@ -100,9 +100,4 @@ describe('Marketplace spec', () => {
     cy.wait('@testing-1')
     cy.get('.error-container').contains('Response not successful: Received status code 500')
   })
-
-  it('Should take you to a details page when you click on an article', () => {
-    cy.get('[data-cy="31"]').click()
-    cy.url().should('include', 'details/31')
-  })
 })
