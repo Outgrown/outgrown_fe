@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Home from '../Home/Home';
 import Nav from '../Nav/Nav'
 import Profile from '../Profile/Profile';
@@ -11,9 +11,11 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
-  return (
+ const [loggedUser, setLoggedUser] = useState(4)
+  
+ return (
     <div className="App">
-      <Nav />
+      <Nav loggedUser={loggedUser} setCurrentUser={setLoggedUser}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/marketplace/" component={Marketplace} />
@@ -28,10 +30,10 @@ const App = () => {
           />
         }} />
         <Route exact path="/profile/:id" render={({match}) => (
-          <Profile id={match.params.id}/>
+          <Profile setCurrentUser={setLoggedUser} id={match.params.id}/>
         )} />
-        <Route exact path="/details/:id/:name" render={({match}) => (
-          <Details id={match.params.id} name={match.params.name} />
+        <Route exact path="/details/:id/:name" render={({match}) => (git f
+          <Details id={match.params.id} name={match.params.name} loggedUser={loggedUser} />
         )}/>
         <Route render={() => <Error message={'404: Page Not Found'}/>} /> 
       </Switch>

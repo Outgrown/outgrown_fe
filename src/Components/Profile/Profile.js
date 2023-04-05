@@ -8,11 +8,11 @@ import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
 import { handleError } from "@apollo/client/link/http/parseAndCheckHttpResponse";
 
-const Profile = (param) => {
+const Profile = ({id, setCurrentUser}) => {
 
     const [userListings, setListings] = useState([])
     const [user, setUser] = useState({})
-    const [userID, setUserID] = useState(param.id)
+    const [userID, setUserID] = useState(id)
     const [userFilter, setUserFilter] = useState('')
 
     const {loading, error, data} = useQuery(GET_USER, {
@@ -31,6 +31,7 @@ const Profile = (param) => {
         if(user.articles) {
             console.log("user", user)
             setListings(user.articles)
+            setCurrentUser(user.id)
         }
 
     },[user])
