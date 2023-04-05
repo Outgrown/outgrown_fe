@@ -1,6 +1,6 @@
 import React,{useState, useEffect}from "react"
 import { useQuery, gql, useMutation } from '@apollo/client';
-import { GET_ARTICLE, POST_USER, POST_USER } from "../../apiCalls";
+import { GET_ARTICLE, POST_USER } from "../../apiCalls";
 import './Details.css'
 import Loading from "../Loading/Loading";
 
