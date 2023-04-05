@@ -3,20 +3,13 @@ import './Nav.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/OutGrownLogo.png'
 
-const Nav = ({loggedUser}) => {
+const Nav = ({loggedUser, user}) => {
   const { pathname } = useLocation()
   const [currentUser, setUser] = useState('')
 
   useEffect(() => {
-
-    if (loggedUser === "7") {
-      setUser('User 1')
-    }
-    else if (loggedUser === "8") {
-      setUser('User 2')
-    }
-    else if (loggedUser === "9") {
-      setUser("User 3")
+    if (loggedUser) {
+      setUser(user.name)
     }
   }, [loggedUser])
 
@@ -35,9 +28,9 @@ const Nav = ({loggedUser}) => {
         <div className='dropdown'>
           <button className='dropbutton'>{currentUser ? currentUser : "Change User"}</button>
           <div className='dropdown-options'>
-            <a href='/profile/7'>User 1</a>
-            <a href='/profile/8'>User 2</a>
-            <a href='/profile/9'>User 3</a>
+            <a href='/profile/7'>Elvis Baumbach</a>
+            <a href='/profile/8'>Phillis Osinski</a>
+            <a href='/profile/9'>Xavier Willms DO</a>
           </div>
         </div>
       </div>
