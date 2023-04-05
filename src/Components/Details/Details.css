@@ -19,8 +19,22 @@
   width:95%;
   margin-top: 1rem;
   margin-left: 2rem;
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
+.vital-info > h3 {
+  margin:0;
+}
+.vital-info > h2 {
+  margin:0;
+}
+.vital-info > h4 {
+  margin:0; 
+}
+
+
 article{
   margin-top:6rem;
   margin-bottom: 3rem;

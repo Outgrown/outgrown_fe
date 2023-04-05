@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import {  POST_USER, UPDATE_ARTICLE_STATUS } from "../../apiCalls";
 import "./Modal.css";
 
-const Modal = ({ open, picture, description, sell, updateModal , articleID, loggedInUser }) => {
+const Modal = ({ open, picture, description, sell, updateModal , articleID, loggedInUser , status}) => {
 
   const [updateUser, outCome] = useMutation(POST_USER);
   const [updateArticleStatus, feedback] = useMutation(UPDATE_ARTICLE_STATUS)
@@ -22,9 +22,10 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
     <div className={containerStyles} onClick={event => closeModalHandler(event)}>
       <div className="modal">
         <div className="x-button-container">
-          {!sell && <h3 className='header-text' >Would You Like To Purchase This Item?</h3>}
-          {sell && <h3 className='header-text' >Would You Like To Sell This Item?</h3>}
-          <button className='button close-able' onClick={event => closeModalHandler(event)}>X</button>
+          {!sell && <h3 className='header-text' > Purchase This Item?</h3>}
+          {sell && status !== 'available' &&  <h3 className='header-text' > Sell This Item?</h3>}
+          {sell && status === 'available' && <h3 className='header-text' > Remove Item From MarketPlace?</h3>}
+          <button className='modal-button close-able' onClick={event => closeModalHandler(event)}>X</button>
         </div>
         <div>
           <img className="modal-image" src={picture} />
@@ -34,8 +35,9 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
         </div>
         <div >
           {!sell && <button className="button" onClick={()=> updateUser({ variables:{ article: { id: articleID, userId: loggedInUser}}})} >Confirm Purchase</button>}
-          {sell && <button className="button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'available'}}})} >Confirm Listing</button>}
-          <button className=' button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
+          {sell && status !== 'available' && <button className="modal-button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'available'}}})} >Confirm Listing</button>}
+          {sell && status === 'available' && <button className="modal-button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'unavailable'}}})} >Remove From Market</button>}
+          <button className=' modal-button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
         </div>
         {/* close modal button w/ hover state*/}
         {/* modal content with picture, description ect*/}

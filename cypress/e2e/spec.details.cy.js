@@ -1,7 +1,7 @@
 import { detailJSON } from "../fixture_helper";
 import { constructJSON } from "../fixture_helper";
 
-describe('Marketplace spec', () => {
+describe('Details Spec', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
       if(req.body.operationName.includes('findArticles')) {
@@ -110,9 +110,32 @@ describe('Marketplace spec', () => {
       }).as("testing");
       cy.get('[href="/details/31/Baby Boy Top"] > .card > img').click()
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
-      cy.get('.details-btn').should('contain','Owned')
+      cy.get('.details-btn').should('contain','Add To Profile')
   })
-   
+  it('Should SHow a modal which allows a user to confirm an action', () => {
+     cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
+        if(req.body.operationName === 'findArticle') {
+          req.reply(detailJSON((req.body.variables.id)))
+        }
+      }).as("testing");
+      cy.get('[href="/details/31/Baby Boy Top"] > .card > img').click()
+      cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
+      cy.get('.details-btn').should('contain','Add To Profile').click()
+      cy.get('.modal > :nth-child(3) > :nth-child(1)').should('contain', 'Confirm Purchase')
+  })
+   it('Should close the modal upon user click' , () => {
+     cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
+        if(req.body.operationName === 'findArticle') {
+          req.reply(detailJSON((req.body.variables.id)))
+        }
+      }).as("testing");
+      cy.get('[href="/details/31/Baby Boy Top"] > .card > img').click()
+      cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
+      cy.get('.details-btn').should('contain','Add To Profile').click()
+      cy.get('.modal > :nth-child(3) > :nth-child(1)').should('contain', 'Confirm Purchase')
+      cy.get('.x-button-container > .modal-button').click()
+      cy.get('.modal-container').should('have.class','closed')
+   })
  
 })
 
