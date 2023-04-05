@@ -133,7 +133,7 @@ describe('Details Spec', () => {
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
       cy.get('.details-btn').should('contain','Add To Profile').click()
       cy.get('.modal > :nth-child(3) > :nth-child(1)').should('contain', 'Confirm Purchase')
-      cy.get('.x-button-container > .button').click()
+      cy.get('.x-button-container > .modal-button').click()
       cy.get('.modal-container').should('have.class','closed')
    })
  
