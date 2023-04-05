@@ -8,6 +8,8 @@ import Loading from "../Loading/Loading";
 
 const Details = ({id , name, loggedUser}) => {
   // const [desiredItem, setDesiredItem] = useState(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
  const [updateUser, outCome] = useMutation(POST_USER);
   console.log('TESTTTME',outCome.data);
   
@@ -23,7 +25,7 @@ console.log('Current PERSON',data?.findArticle?.user?.id);
   console.log('INCOMING PERSON',loggedUser)
   
   return(<section className="clothing-details">
-        <Modal open={true} picture={data?.findArticle.imageLink} description={data?.findArticle.description}/>
+        <Modal open={modalIsOpen} picture={data?.findArticle.imageLink} description={data?.findArticle.description} updateModal={setModalIsOpen}/>
 
     {/* {error && <Error/>} */}
     {loading && !error && <Loading/> }
@@ -69,7 +71,7 @@ console.log('Current PERSON',data?.findArticle?.user?.id);
        <div>
           {/* {+data.findArticle.user.id !== loggedUser && <button onClick={()=> updateUser({ variables:{ article: { id: data.findArticle.id, userId:loggedUser}}})} className="details-btn"> Add To Profile </button>}
           {+data.findArticle.user.id === loggedUser && <button className="details-btn"> Add To Market </button>}  */}
-          <button className="details-btn" onClick={() => {}}> Add To Market </button>
+          <button className="details-btn" onClick={() => setModalIsOpen(true)}> Add To Market </button>
         </div>
         </section>
     </section> }
