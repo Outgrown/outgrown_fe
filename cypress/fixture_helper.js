@@ -106,10 +106,18 @@ export const constructJSON = (articleType, ageGroup, gender) => {
   if (!ageGroup) {ageGroup = ''} 
   if (!gender) {gender = ''}
   
-  console.log("Age: ", ageGroup, 'Gender: ', gender, "Type: ", articleType)
   return {
     "data": {
       "findArticles": findArticles.filter(art => (art.gender.includes(gender) && art.ageGroup.includes(ageGroup) && art.articleType.includes(articleType)))
+    }
+  }
+}
+
+
+export const detailJSON = (passedID) => {
+  return {
+    "data": {
+      "findArticle": findArticles.find(art => art.id === passedID)
     }
   }
 }
