@@ -4,19 +4,22 @@ import "./Modal.css";
 const Modal = ({ open, picture, description, button, updateModal }) => {
   const [ModalIsOpen, setModalIsOpen] = useState(false);
 
-  const closeModalHandler = () => {
-    setTimeout(() => {
-      updateModal(false)
-    }, 400);
+  const closeModalHandler = (event) => {
+    if(event.target.className.includes('close-able')) {
+
+      setTimeout(() => {
+        updateModal(false)
+      }, 400);
+    }
   };
 
-  const containerStyles = open ? "modal-container" : "modal-container closed";
+  const containerStyles = open ? "modal-container close-able" : "modal-container close-able closed";
 
   return (
-    <div className={containerStyles} onClick={closeModalHandler}>
+    <div className={containerStyles} onClick={event => closeModalHandler(event)}>
       <div className="modal">
         <div className="x-button-container">
-          <button onClick={closeModalHandler}>X</button>
+          <button className={'close-able'} onClick={event => closeModalHandler(event)}>X</button>
         </div>
         <div>
           <img className="modal-image" src={picture} />
@@ -26,7 +29,7 @@ const Modal = ({ open, picture, description, button, updateModal }) => {
         </div>
         <div>
           <button>Confirm Purchase</button>
-          <button onClick={closeModalHandler}>Cancel</button>
+          <button className={'close-able'} onClick={event => closeModalHandler(event)}>Cancel</button>
         </div>
         {/* close modal button w/ hover state*/}
         {/* modal content with picture, description ect*/}
