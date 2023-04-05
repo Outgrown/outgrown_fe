@@ -3,10 +3,9 @@ import { useMutation } from '@apollo/client';
 import {  POST_USER } from "../../apiCalls";
 import "./Modal.css";
 
-const Modal = ({ open, picture, description, button, updateModal }) => {
+const Modal = ({ open, picture, description, button, updateModal , articleID, loggedInUser }) => {
 
   const [updateUser, outCome] = useMutation(POST_USER);
-  console.log('TESTTTME',outCome.data);
 
   const closeModalHandler = (event) => {
     if(event.target.className.includes('close-able')) {
@@ -32,7 +31,7 @@ const Modal = ({ open, picture, description, button, updateModal }) => {
           </div>
         </div>
         <div >
-          <button className="button">Confirm Purchase</button>
+          <button className="button" onClick={()=> updateUser({ variables:{ article: { id: articleID, userId: loggedInUser}}})} >Confirm Purchase</button>
           <button className=' button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
         </div>
         {/* close modal button w/ hover state*/}
