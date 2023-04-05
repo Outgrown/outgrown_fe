@@ -88,5 +88,16 @@
 
 /* Mobile Sizes */
 @media screen and (max-width: 1000px) {
-  
+  .nav-bar {
+    height: 20vh;
+  }
+  .nav-grid {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .nav-button {
+    padding-top: 10px;
+  }
 }
