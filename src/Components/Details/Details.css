@@ -7,6 +7,13 @@
   width: 100vw;
 }
 
+.loading-details-display{
+  width: 55vw;
+  position: fixed;
+  left: 25%;
+  top:25%
+}
+
 .vital-info {
   background-color: rgba(231, 229, 229, 0.91);
   width:95%;
@@ -110,7 +117,5 @@ article > img {
     width: 100%;
     margin-right:3rem;  
   }
-  
-   
   
 }
