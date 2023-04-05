@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Nav.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/OutGrownLogo.png'
-import Form from '../Form/Form'
-import Marketplace from '../Marketplace/Marketplace'
 
-const Nav = () => {
+const Nav = ({loggedUser}) => {
   const { pathname } = useLocation()
+  const [currentUser, setUser] = useState('')
+
+  useEffect(() => {
+
+    if (loggedUser === "7") {
+      setUser('User 1')
+    }
+    else if (loggedUser === "8") {
+      setUser('User 2')
+    }
+    else if (loggedUser === "9") {
+      setUser("User 3")
+    }
+  }, [loggedUser])
+
 
   return (
     <section className='nav-container'>
@@ -20,11 +33,11 @@ const Nav = () => {
           <NavLink to='/marketplace/all/big_kid/all' className='nav-button' isActive={() => pathname.includes('big_kid')}>BIG KID</NavLink>
         </div>
         <div className='dropdown'>
-          <button className='dropbutton'>CHANGE USER</button>
+          <button className='dropbutton'>{currentUser}</button>
           <div className='dropdown-options'>
-            <a href='/profile/4'>User 1</a>
-            <a href='/profile/5'>User 2</a>
-            <a href='/profile/6'>User 3</a>
+              <a href='/profile/7'>User 1</a>
+              <a href='/profile/8'>User 2</a>
+              <a href='/profile/9'>User 3</a>
           </div>
         </div>
       </div>
