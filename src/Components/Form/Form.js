@@ -81,10 +81,6 @@ const Form = ({paramArt, paramAge, paramGender, setArticleType, setAgeGroup, set
         </div>
     </form>
   </section>
-
-
-
-      
   )
   }
 export default Form; 
