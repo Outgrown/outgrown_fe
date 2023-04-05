@@ -1,33 +1,32 @@
 import React, { useState } from "react";
-import './Modal.css'
+import "./Modal.css";
 
-const Modal = ({open, picture, description, button}) => {
-  const [ModalIsOpen, setModalIsOpen] = useState(false)
+const Modal = ({ open, picture, description, button, updateModal }) => {
+  const [ModalIsOpen, setModalIsOpen] = useState(false);
 
-  const closeModal = () => {
+  const closeModalHandler = () => {
     setTimeout(() => {
-      // setModalIsOpen(false)
-      // Might want passed down Details state function instead of state here
-    }, 400)
-  }
+      updateModal(false)
+    }, 400);
+  };
 
-  const containerStyles = open ? "modal-container" : "modal-container closed"
+  const containerStyles = open ? "modal-container" : "modal-container closed";
 
   return (
-    <div className="modal-container" onClick={closeModal}>
+    <div className={containerStyles} onClick={closeModalHandler}>
       <div className="modal">
-        <div>
-          <button>X</button>
+        <div className="x-button-container">
+          <button onClick={closeModalHandler}>X</button>
         </div>
         <div>
-          </div>
-            {picture}
+          <img className="modal-image" src={picture} />
           <div>
-          {description}
+            <p>{description}</p>
+          </div>
         </div>
         <div>
           <button>Confirm Purchase</button>
-          <button>Cancel</button>
+          <button onClick={closeModalHandler}>Cancel</button>
         </div>
         {/* close modal button w/ hover state*/}
         {/* modal content with picture, description ect*/}
@@ -35,7 +34,7 @@ const Modal = ({open, picture, description, button}) => {
         {/* button to cancel and quit out of modal */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
