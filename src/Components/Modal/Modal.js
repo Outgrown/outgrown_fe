@@ -34,10 +34,10 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
           </div>
         </div>
         <div >
-          {!sell && <button className="button" onClick={()=> updateUser({ variables:{ article: { id: articleID, userId: loggedInUser}}})} >Confirm Purchase</button>}
+          {!sell && <button className="modal-button" onClick={()=> updateUser({ variables:{ article: { id: articleID, userId: loggedInUser}}})} >Confirm Purchase</button>}
           {sell && status !== 'available' && <button className="modal-button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'available'}}})} >Confirm Listing</button>}
           {sell && status === 'available' && <button className="modal-button" onClick={()=> updateArticleStatus({ variables:{ article: { id: articleID, status: 'unavailable'}}})} >Remove From Market</button>}
-          <button className=' modal-button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
+          <button className='modal-button close-able' onClick={event => closeModalHandler(event)}>Cancel</button>
         </div>
         {/* close modal button w/ hover state*/}
         {/* modal content with picture, description ect*/}

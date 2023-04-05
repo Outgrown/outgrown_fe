@@ -75,7 +75,7 @@
   outline: 1px solid black;
   margin-top: 1px;
   margin-left: 1px;
-  width: 50px;
+  width: 65px;
 }
 
 .dropdown:hover .dropdown-options {
@@ -99,9 +99,5 @@
 
   .nav-button, .dropbutton {
     font-size: 0.65rem;
-  }
-
-  .dropdown-options a {
-    width: 40px;
   }
 }
