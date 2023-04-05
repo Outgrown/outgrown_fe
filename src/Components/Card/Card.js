@@ -15,7 +15,7 @@ const Card = ({ id, name, imageLink, altImage, ageGroup, price, status }) => {
         <img src={imageLink} alt={altImage} />
         <div className="text">
           <p className="name">{name}</p>
-          <p className="price">{price}</p>
+          <p className="price">{`$${price}`}</p>
           <p className="age">Size: {displayAge}</p>
         </div>
       </div>
