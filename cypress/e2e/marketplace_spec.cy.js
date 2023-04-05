@@ -89,6 +89,18 @@ describe('Marketplace spec', () => {
     cy.get('.market-container').children().should('have.length', 1)
   })
 
+  it('Should display a message if there are no articles that match a filter set', () => {
+    cy.get('[data-cy="age"]').select('little_kid')
+    cy.get('.error-container').contains('No options found for filters. Try a different combination!')
+  })
+
+  it('Should display an error message when there is a server malfunction', () => {
+    cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', {statusCode: 500}).as('testing-1')
+    cy.visit('http://localhost:3000/marketplace')
+    cy.wait('@testing-1')
+    cy.get('.error-container').contains('Response not successful: Received status code 500')
+  })
+
   it('Should take you to a details page when you click on an article', () => {
     cy.get('[data-cy="31"]').click()
     cy.url().should('include', 'details/31')
