@@ -15,7 +15,7 @@ const App = () => {
   
  return (
     <div className="App">
-      <Nav />
+      <Nav loggedUser={loggedUser}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/marketplace/" component={Marketplace} />
@@ -30,7 +30,7 @@ const App = () => {
           />
         }} />
         <Route exact path="/profile/:id" render={({match}) => (
-          <Profile id={match.params.id}/>
+          <Profile setCurrentUser={setLoggedUser} id={match.params.id}/>
         )} />
         <Route exact path="/details/:id/:name" render={({match}) => (
           <Details id={match.params.id} name={match.params.name} loggedUser={loggedUser} />
