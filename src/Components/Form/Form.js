@@ -51,7 +51,7 @@ const Form = ({paramArt, paramAge, paramGender, setArticleType, setAgeGroup, set
       <form className="selects-form">
       <div className="clothing-article-sel"> 
         <label> Article Types </label>
-          <select className='form-select' value={clothingArticle} onChange={(e) => handleSelectedOptions(setArticle,e)}> 
+          <select className='form-select' data-cy='article' value={clothingArticle} onChange={(e) => handleSelectedOptions(setArticle,e)}> 
             <option value={''}> All </option>
             <option value={'tops'}> Tops/Tees </option>
             <option value={'pants'}> Bottoms </option>
@@ -62,17 +62,17 @@ const Form = ({paramArt, paramAge, paramGender, setArticleType, setAgeGroup, set
         </div>
       <div className="age-group-sel">
         <label> Age Groups </label>
-        <select className="form-select" value={kidAge} onChange={(e) => handleSelectedOptions(setKidAge,e)}> 
+        <select className="form-select" data-cy='age' value={kidAge} onChange={(e) => handleSelectedOptions(setKidAge,e)}> 
           <option className="form-opts" value={''}> All </option>
           <option className="form-opts" value={'baby'}> Baby(0-2yr) </option>
-          <option className="form-opts" value={'todler'}> Toddler(2-4yr)</option>
+          <option className="form-opts" value={'toddler'}> Toddler(2-4yr)</option>
           <option className="form-opts" value={'little_kid'}> Little Kid (5-7yr)</option>
           <option className="form-opts" value={'big_kid'}> Big Kid (8+)</option>
         </select>
         </div>
         <div className="gender-sel">
         <label> Gender </label>
-          <select className='form-select' value={kidGender} onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
+          <select className='form-select' data-cy='gender' value={kidGender} onChange={(e) => handleSelectedOptions(setKidGender,e)}> 
             <option className="form-opts" value={''}> All </option>
             <option className="form-opts" value={'boy'}> Boy </option>
             <option className="form-opts" value={'girl'}> Girl </option>
