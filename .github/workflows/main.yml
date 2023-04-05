@@ -2,10 +2,18 @@ name: Cypress CI
 on: [push]
 jobs:
  Cypress-Test:
-   runs-on: windows-latest
+   runs-on: macos-latest
+   
    steps:
      - name: Checkout GitCode
        uses: actions/checkout@v2
+       
+     - name: Use Node.js
+       uses: actions/setup-node@v3
+       with:
+          node-version: '16.x'
+     - run: npm ci
+     - run: npm start
        
      - name: Run Cypress Test
        uses: cypress-io/github-action@v4
