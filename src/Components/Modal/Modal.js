@@ -3,16 +3,31 @@ import React, { useState } from "react";
 const Modal = () => {
   const [ModalIsOpen, setModalIsOpen] = useState(false)
 
-  const closeModal = () => {
+  const closeModal = (picture, desctiption, button) => {
     setTimeout(() => {
-      setModalIsOpen(false)
+      // setModalIsOpen(false)
+      // Might want passed down Details state function instead of state here
     }, 400)
   }
 
   return (
     <div className="modal-container" onClick={closeModal}>
       <div className="modal">
-
+        <div>
+          <button>X</button>
+        </div>
+        <div>
+          {picture}
+          {description}
+        </div>
+        <div>
+          <button>Confirm Purchase</button>
+          <button>Cancel</button>
+        </div>
+        {/* close modal button w/ hover state*/}
+        {/* modal content with picture, description ect*/}
+        {/* button to confirm purchase or putting up on marketplace */}
+        {/* button to cancel and quit out of modal */}
       </div>
     </div>
   )
