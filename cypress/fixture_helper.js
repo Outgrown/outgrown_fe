@@ -112,3 +112,12 @@ export const constructJSON = (articleType, ageGroup, gender) => {
     }
   }
 }
+
+
+export const detailJSON = (passedID) => {
+  return {
+    "data": {
+      "findArticle": findArticles.find(art => art.id === passedID)
+    }
+  }
+}
