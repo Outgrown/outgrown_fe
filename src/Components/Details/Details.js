@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "../Modal/Modal";
-import { useQuery, gql, useMutation } from "@apollo/client";
-import { GET_ARTICLE, POST_USER } from "../../apiCalls";
+import { useQuery } from "@apollo/client";
+import { GET_ARTICLE } from "../../apiCalls";
 import "./Details.css";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 
 const Details = ({ id, name, loggedUser }) => {
   
@@ -16,8 +17,6 @@ const Details = ({ id, name, loggedUser }) => {
     },
   });
   
-  // console.log('TESTME',loggedUser)
-  // console.log('ARTICLE OWNER', data?.findArticle?.user?.id)
   return(<section className="clothing-details">
    <Modal
         open={modalIsOpen}
@@ -30,7 +29,7 @@ const Details = ({ id, name, loggedUser }) => {
         status={data?.findArticle.status}
       />
       
-    {/* {error && <Error/>} */}
+    {error && <Error/>}
     {loading && !error && <section className="loading-details-display"><Loading/></section> }
     
     {!loading && !error && <section className="detail-card-display">

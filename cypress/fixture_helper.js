@@ -101,6 +101,105 @@ const findArticles = [
     }
 ]
 
+const findUsers = [
+  {
+    "id": "7",
+    "name": "Tien Gislason",
+    "__typename": "User",
+    "articles": [
+      {
+        "id": "31",
+        "name": "Baby Boy Top",
+        "status": "available",
+        "imageLink": "https://ih1.redbubble.net/image.1232366750.7238/ra,kids_tee,x900,FFFFFF:97ab1c12de,front-pad,750x1000,f8f8f8.jpg",
+        "altImage": "A baby boy's top",
+        "articleType": "tops",
+        "ageGroup": "baby",
+        "color": "white",
+        "gender": "boy",
+        "condition": "great",
+        "description": "A White t-shirt that says 'cute smart & funny just like my Daddy'",
+        "price": 3
+      },
+      {
+          "id": "9",
+          "name": "Wheat",
+          "status": "unavailable",
+          "imageLink": "www.image.com",
+          "altImage": "it is clearly an image",
+          "articleType": "bottoms",
+          "ageGroup": "big_kid",
+          "color": "magenta",
+          "gender": "female",
+          "condition": "good",
+          "description": "If trees could scream, would we be so cavalier about cutting them down? We might, if they screamed all the time, for no good reason.",
+          "price": 16,
+          "__typename": "Article"
+      },
+      {
+          "id": "14",
+          "name": "Stone Hoe",
+          "status": "available",
+          "imageLink": "www.image.com",
+          "altImage": "it is clearly an image",
+          "articleType": "bottoms",
+          "ageGroup": "baby",
+          "color": "grey",
+          "gender": "male",
+          "condition": "good",
+          "description": "I'd rather be rich than stupid.",
+          "price": 29,
+          "__typename": "Article"
+      },
+      {
+          "id": "19",
+          "name": "Iron Shovel",
+          "status": "pending",
+          "imageLink": "www.image.com",
+          "altImage": "it is clearly an image",
+          "articleType": "dresses",
+          "ageGroup": "little_kid",
+          "color": "turquoise",
+          "gender": "male",
+          "condition": "great",
+          "description": "If they ever come up with a swashbuckling school, I think one of the courses should be laughing, then jumping off something.",
+          "price": 26,
+          "__typename": "Article"
+      },
+      {
+          "id": "25",
+          "name": "Bucket",
+          "status": "available",
+          "imageLink": "www.image.com",
+          "altImage": "it is clearly an image",
+          "articleType": "bottoms",
+          "ageGroup": "baby",
+          "color": "blue",
+          "gender": "female",
+          "condition": "great",
+          "description": "Whether they find life there or not, I think Jupiter should be called an enemy planet.",
+          "price": 23,
+          "__typename": "Article"
+      },
+      {
+          "id": "26",
+          "name": "Minecart with Furnace",
+          "status": "unavailable",
+          "imageLink": "www.image.com",
+          "altImage": "it is clearly an image",
+          "articleType": "other",
+          "ageGroup": "big_kid",
+          "color": "violet",
+          "gender": "male",
+          "condition": "fair",
+          "description": "Ambition is like a frog sitting on a Venus Flytrap. The flytrap can bite and bite, but it won't bother the frog because it only has little tiny plant teeth. But some other stuff could happen and it could be like ambition.",
+          "price": 28,
+          "__typename": "Article"
+      }
+    ]
+  }
+]
+
 export const constructJSON = (articleType, ageGroup, gender) => {
   if(!articleType) {articleType = ''} 
   if (!ageGroup) {ageGroup = ''} 
@@ -118,6 +217,15 @@ export const detailJSON = (passedID) => {
   return {
     "data": {
       "findArticle": findArticles.find(art => art.id === passedID)
+    }
+  }
+}
+
+export const userJSON = (idParam) => {
+  // const articles = findUsers.articles
+  return {
+    "data": {
+      "findUser": findUsers.find(art => art.id === idParam)
     }
   }
 }

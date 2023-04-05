@@ -24,7 +24,7 @@ export default function Marketplace({paramArt, paramAge, paramGender}) {
       gender: gender ? gender : null,
     };
     filterQuery({ variables: variables });
-  }, [articleType, ageGroup, gender]);
+  }, [filterQuery, articleType, ageGroup, gender]);
 
   useEffect(() => {
     if (data) {
