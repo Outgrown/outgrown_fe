@@ -1,6 +1,6 @@
 import React from "react";
 import spinner from '../../assets/OutGrownSpinner.png'
-import logo from '../../assets/OutGrownLogo.png'
+import logo from '../../assets/OutGrownSpinnerLogo.png'
 import './Loading.css'
 
 const Loading = () => {

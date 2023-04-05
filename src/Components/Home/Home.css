@@ -14,6 +14,10 @@
   width: 25%;
 }
 
+.cta-hidden {
+  display: none;
+}
+
 .cta h2 {
   font-size: 30px;
 }
@@ -66,7 +70,7 @@
 
 .art-container {
   height: 300px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -81,13 +85,18 @@ swiper-slide, .art-link {
 
 .art-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 75%;
-  background-color:bisque;
   margin: 0 auto;
   text-decoration: none;
   color: black;
+}
+
+.art-link img {
+  max-height: 90%;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -97,5 +106,23 @@ swiper-slide, .art-link {
 
   .cat-link {
     width: 45%;
+  }
+
+  .cta {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .cta h2 {
+    font-size: 25px;
+  }
+
+  .cta-visible {
+    display: none;
+  }
+
+  .cta-hidden {
+    display: block;
   }
 }

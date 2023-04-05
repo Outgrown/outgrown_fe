@@ -11,11 +11,12 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
- const [loggedUser, setLoggedUser] = useState(4)
+ const [loggedUser, setLoggedUser] = useState(7)
+ const [user, setUserName] = useState('')
   
  return (
     <div className="App">
-      <Nav />
+      <Nav user={user} loggedUser={loggedUser}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/marketplace/" component={Marketplace} />
@@ -30,7 +31,7 @@ const App = () => {
           />
         }} />
         <Route exact path="/profile/:id" render={({match}) => (
-          <Profile id={match.params.id}/>
+          <Profile setUserName={setUserName} setCurrentUser={setLoggedUser} id={match.params.id}/>
         )} />
         <Route exact path="/details/:id/:name" render={({match}) => (
           <Details id={match.params.id} name={match.params.name} loggedUser={loggedUser} />

@@ -1,7 +1,7 @@
 .logo-link {
   display: block;
   height: 65px;
-  width: 23%;
+  width: 250px;
   margin: 10px auto 0;
 }
 
@@ -69,12 +69,13 @@
 
 .dropdown-options a {
   color: black;
-  padding: 12px 28px;
+  padding: 12px 10px;
   text-decoration: none;
   display: block;
   outline: 1px solid black;
   margin-top: 1px;
   margin-left: 1px;
+  width: 65px;
 }
 
 .dropdown:hover .dropdown-options {
@@ -88,5 +89,15 @@
 
 /* Mobile Sizes */
 @media screen and (max-width: 1000px) {
-  
+  .nav-bar {
+    width: 90%;
+  }
+
+  .nav-grid {
+    width: 80%;
+  }
+
+  .nav-button, .dropbutton {
+    font-size: 0.65rem;
+  }
 }

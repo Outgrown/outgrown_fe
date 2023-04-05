@@ -7,13 +7,34 @@
   width: 100vw;
 }
 
+.loading-details-display{
+  width: 55vw;
+  position: fixed;
+  left: 25%;
+  top:25%
+}
+
 .vital-info {
   background-color: rgba(231, 229, 229, 0.91);
   width:95%;
   margin-top: 1rem;
   margin-left: 2rem;
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
+.vital-info > h3 {
+  margin:0;
+}
+.vital-info > h2 {
+  margin:0;
+}
+.vital-info > h4 {
+  margin:0; 
+}
+
+
 article{
   margin-top:6rem;
   margin-bottom: 3rem;
@@ -24,12 +45,12 @@ article > img {
 }
 
 
-.details-cont{
+.details-cont {
   display: flex;
   flex-direction: column;
   height:auto;
   width: 80%;
-  margin-left: 1rem;
+  margin: 0 auto 1rem;
 }
  .info-wrap {
   display: flex;
@@ -110,7 +131,5 @@ article > img {
     width: 100%;
     margin-right:3rem;  
   }
-  
-   
   
 }

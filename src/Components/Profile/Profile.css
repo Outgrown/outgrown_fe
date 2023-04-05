@@ -2,7 +2,7 @@
     padding-top: 5%;
     display: flex;
     justify-content: space-between;
-    padding: 2% 10% 2%
+    padding: 3% 8% 3%
 }
 
 h2 {
@@ -11,7 +11,7 @@ h2 {
 }
 
 .wardrobe-icon {
-    width: 10%;
+    width: 9%;
 }
 
 .options-container {
@@ -42,7 +42,7 @@ h2 {
     justify-content: space-evenly;
     gap: 20px 0;
     flex-wrap: wrap;
-    padding: 0 2.5%;
+    padding: 0 2.5% 25px;
 }
 
 @media screen and (max-width: 1000px) {

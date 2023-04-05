@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Nav.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/OutGrownLogo.png'
 
-const Nav = () => {
+const Nav = ({loggedUser, user}) => {
   const { pathname } = useLocation()
+  const [currentUser, setUser] = useState('')
+
+  useEffect(() => {
+    if (loggedUser) {
+      setUser(user.name)
+    }
+  }, [loggedUser])
+
 
   return (
     <section className='nav-container'>
@@ -18,11 +26,11 @@ const Nav = () => {
           <NavLink to='/marketplace/all/big_kid/all' className='nav-button' data-cy='big-nav' isActive={() => pathname.includes('big_kid')}>BIG KID</NavLink>
         </div>
         <div className='dropdown'>
-          <button className='dropbutton'>CHANGE USER</button>
+          <button className='dropbutton'>{currentUser ? currentUser : "CHANGE USER"}</button>
           <div className='dropdown-options'>
-            <a href='/profile/4'>User 1</a>
-            <a href='/profile/5'>User 2</a>
-            <a href='/profile/6'>User 3</a>
+            <a href='/profile/7'>Elvis Baumbach</a>
+            <a href='/profile/8'>Phillis Osinski</a>
+            <a href='/profile/9'>Xavier Willms DO</a>
           </div>
         </div>
       </div>
