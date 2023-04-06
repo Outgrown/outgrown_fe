@@ -47,19 +47,19 @@ export default function Home() {
       <div className="cat-container">
         <h3 className="home-label">Style for every stage</h3>
         <div className="cat-box">
-          <Link className="cat-link" to="/marketplace/all/baby/all">
+          <Link data-cy="baby-cat" className="cat-link" to="/marketplace/all/baby/all">
             <img className="cat-img" src={babyImg} alt="A baby wearing a green sweater and overalls" />
             Baby (0 - 2)
           </Link>
-          <Link className="cat-link" to="/marketplace/all/toddler/all">
+          <Link data-cy="toddler-cat" className="cat-link" to="/marketplace/all/toddler/all">
             <img className="cat-img" src={toddlerImg} alt="A toddler wearing jeans and a white t-shirt" />
             Toddler (2 - 4)
           </Link>
-          <Link className="cat-link" to="/marketplace/all/little_kid/all">
+          <Link data-cy="littlekid-cat" className="cat-link" to="/marketplace/all/little_kid/all">
             <img className="cat-img" src={littleKidImg} alt="A little kid wearing a striped longsleeve shirt" />
             Little Kid (5 - 7)
           </Link>
-          <Link className="cat-link" to="/marketplace/all/big_kid/all">
+          <Link data-cy="bigkid-cat" className="cat-link" to="/marketplace/all/big_kid/all">
             <img className="cat-img" src={bigKidImg} alt="A big kid wearing a red plaid shirt and a yellow hat" />
             Big Kid (8+)
           </Link>
