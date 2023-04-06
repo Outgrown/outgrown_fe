@@ -22,7 +22,7 @@
   min-height: 500px;
   background: white;
   border: 2px solid rgb(83, 83, 83);
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   transition: all .4s ease-in-out;
