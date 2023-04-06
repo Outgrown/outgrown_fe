@@ -112,7 +112,7 @@ describe('Details Spec', () => {
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
       cy.get('.details-btn').should('contain','Add To Profile')
   })
-  it('Should SHow a modal which allows a user to confirm an action', () => {
+  it('Should show a modal which allows a user to confirm an action', () => {
      cy.intercept('POST', 'https://outgrown-be.herokuapp.com/graphql', (req) => {
         if(req.body.operationName === 'findArticle') {
           req.reply(detailJSON((req.body.variables.id)))
@@ -133,7 +133,7 @@ describe('Details Spec', () => {
       cy.url().should('eq','http://localhost:3000/details/31/Baby%20Boy%20Top')
       cy.get('.details-btn').should('contain','Add To Profile').click()
       cy.get('.modal > :nth-child(3) > :nth-child(1)').should('contain', 'Confirm Purchase')
-      cy.get('.x-button-container > .modal-button').click()
+      cy.get('.x-button-container > .modal-button-c').click()
       cy.get('.modal-container').should('have.class','closed')
    })
  
