@@ -15,7 +15,11 @@ Every parent understands the perpetual struggle of buying clothing that their ch
 - [Contributors](#contributors)
  
 ## Preview
-Include logo/demo screenshot etc.
+<p align="center">
+    
+![giphy](https://user-images.githubusercontent.com/113647295/230459724-29bee323-b7be-482c-b931-162e4763f035.gif)
+    
+</p>
 
 ## Deployment Link
 [Click here to try the app!](https://outgrown.vercel.app/)
@@ -65,8 +69,6 @@ What makes your project stand out?
    ```
 
 ## API Reference
-[API deployment link](https://outgrown-be.herokuapp.com/graphql)
-
 [Backend API Repo](https://github.com/Outgrown/outgrown_be)
 
 ## Contributors 
