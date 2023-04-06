@@ -15,7 +15,7 @@
 }
 
 .vital-info {
-  background-color: rgba(231, 229, 229, 0.91);
+  background-color: rgba(213, 227, 240, 0.808);
   width:95%;
   margin-top: 1rem;
   margin-left: 2rem;
@@ -110,7 +110,7 @@ article > img {
   }
 
   .vital-info {
-    background-color: lightgray;
+    background-color: rgba(213, 227, 240, 0.808);
     margin-top: 1rem;
     width:85%; 
     border-radius: 13px;
