@@ -1,13 +1,9 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/113647295/230453131-a54d5a8a-d06a-42ca-a847-1ec1c873a2e1.png"/>
 </p>
-<div align="center">
 
 # Outgrown
 Every parent understands the perpetual struggle of buying clothing that their children quickly grow out of, then having to figure out what to do with that old clothing that no longer fits. Our app aims to provide users with a platform to buy, replace and exchange their children's outgrown clothing. The app provides a convenient and cost-efffect solution for parents looking to buy and sell gently used children's clothing. 
-  
-</div>
-
 
 ## Table of Contents
 - [Preview](#preview)
@@ -22,7 +18,7 @@ Every parent understands the perpetual struggle of buying clothing that their ch
 Include logo/demo screenshot etc.
 
 ## Deployment Link
-[Click to see our deployed project](https://outgrown.vercel.app/)
+[Click here to try the app!](https://outgrown.vercel.app/)
 
 ## Technologies
 <div>
