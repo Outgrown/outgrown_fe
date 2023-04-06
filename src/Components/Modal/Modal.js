@@ -10,9 +10,7 @@ const Modal = ({ open, picture, description, sell, updateModal , articleID, logg
 
   const closeModalHandler = (event) => {
     if(event.target.className.includes('close-able')) {
-      setTimeout(() => {
         updateModal(false)
-      }, 400);
     }
   };
 
