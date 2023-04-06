@@ -34,11 +34,13 @@
 }
 
 .header-text {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .modal-image {
-  width: 70%;
+  min-width: 55%;
+  max-width: 70%;
+  max-height: 80%;
   border-radius: 5px;
   margin-bottom: 20px;
 }
