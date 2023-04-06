@@ -50,7 +50,7 @@ describe('Profile spec', () => {
     cy.get('.filter-dropdown').select('Available').should('have.value', 'available')
   })
 
-  it.only('should correctly filter items as the filter changes to', () => {
+  it('should correctly filter items as the filter changes to', () => {
     cy.wait("@getUser")
 
     cy.get('.filter-dropdown').select('Available')
